@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.01a1c1b7.css",
-    "main.js": "/static/js/main.f4dbfc27.js",
+    "main.css": "/static/css/main.9952d758.css",
+    "main.js": "/static/js/main.4e988937.js",
     "reactPlayerPreview.js": "/static/js/reactPlayerPreview.af74439e.chunk.js",
     "static/media/kindpng_694225.png": "/static/media/kindpng_694225.fdced79281544a3e938e.png",
     "static/media/logo (2).png": "/static/media/logo (2).1878db40f8842801b8a9.png",
@@ -11,7 +11,6 @@
     "static/media/burger1.png": "/static/media/burger1.c0988e605afd5ee432f2.png",
     "static/media/chicken4.png": "/static/media/chicken4.c4acdf41649fbd6163c8.png",
     "static/media/chicken3.png": "/static/media/chicken3.bbc7b7ed3c8683f1a138.png",
-    "static/media/logoyuvarlak.png": "/static/media/logoyuvarlak.01f44c10e03521e05220.png",
     "static/media/soon2.png": "/static/media/soon2.eedf19379ebc5c3f3717.png",
     "static/media/pexels-daniela-constantini-5591664.jpg": "/static/media/pexels-daniela-constantini-5591664.d2c6dc1318f87a0a68f6.jpg",
     "static/media/10.png": "/static/media/10.dfa23b725b4abcd7b232.png",
@@ -53,12 +52,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.01a1c1b7.css.map": "/static/css/main.01a1c1b7.css.map",
-    "main.f4dbfc27.js.map": "/static/js/main.f4dbfc27.js.map",
+    "main.9952d758.css.map": "/static/css/main.9952d758.css.map",
+    "main.4e988937.js.map": "/static/js/main.4e988937.js.map",
     "reactPlayerPreview.af74439e.chunk.js.map": "/static/js/reactPlayerPreview.af74439e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01a1c1b7.css",
-    "static/js/main.f4dbfc27.js"
+    "static/css/main.9952d758.css",
+    "static/js/main.4e988937.js"
   ]
 }

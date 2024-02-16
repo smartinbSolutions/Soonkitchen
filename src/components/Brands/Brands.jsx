@@ -104,7 +104,7 @@ function BrandSection() {
                       selectedCategory === item.cat) &&
                     item.brand === selectedBrand ? (
                       <div className="product-card">
-                        <div className="pr-card brand-card">
+                        <div className="pr-card brandd-card">
                           {" "}
                           <div className="pr-info ">
                             <h1>{item.name}</h1>
