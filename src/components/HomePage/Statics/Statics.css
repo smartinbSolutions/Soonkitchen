@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Readex+Pro:wght@400;500;600;700&display=swap");
+.statics {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 100px auto;
+}
+
+.statics .static h1 {
+  font-size: 80px !important;
+  font-weight: 700;
+  font-family: "Readex Pro";
+}
+.statics .static h2 {
+  color: #bdbdbd;
+  font-size: 70px !important;
+  font-weight: 700;
+  font-family: "Readex Pro";
+}
+@media screen and (max-width: 640px) {
+  .statics {
+    margin: 154px 0 82px 0;
+  }
+  .statics .static {
+    width: 40%;
+  }
+  .statics .static h1 {
+    font-size: 50px !important;
+  }
+  .statics .static h2 {
+    font-size: 40px !important;
+  }
+}

@@ -1,0 +1,58 @@
+.Contact {
+  margin: 200px 0 200px 0;
+}
+
+.Contact .Contact-Methods {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.Contact .Contact-Methods .Contact-box {
+  width: 25%;
+  height: 110px;
+  text-align: center;
+  border-right: 3px solid #ff0303bd;
+}
+.Contact .Contact-Methods .Contact-box:nth-last-child(1) {
+  border-right: 0px solid #ff0303bd;
+}
+
+.Contact .Contact-Methods .Contact-box img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 25px;
+  margin-top: 20px;
+}
+
+.Contact .Contact-Methods .Contact-box p {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(151, 151, 151);
+}
+
+@media screen and (max-width: 640px) {
+  .Contact {
+    margin: 50px 20px 50px 20px;
+  }
+
+  .Contact .Contact-Methods .Contact-box {
+    width: 45%;
+    text-align: center;
+    margin: 5px;
+    flex-wrap: wrap;
+    border-right: 0px solid #ff0303bd;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px;
+  }
+  .Contact .Contact-Methods .Contact-box img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .Contact .Contact-Methods .Contact-box p {
+    font-size: 10px;
+  }
+}

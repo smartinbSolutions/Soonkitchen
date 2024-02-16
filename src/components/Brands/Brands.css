@@ -1,0 +1,7 @@
+.product-card {
+  position: relative;
+  width: 90%;
+}
+.product-card .brand-card {
+  margin-left: 1% !important;
+}

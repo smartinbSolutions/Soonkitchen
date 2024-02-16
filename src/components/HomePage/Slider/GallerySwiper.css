@@ -1,0 +1,30 @@
+.myGallerySwiper {
+  width: 400px;
+  height: 600px;
+}
+
+.myGallerySwiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.myGallerySwiper .swiper-slide img {
+  object-fit: cover;
+}
+
+.myGallerySwiper .swiper-slide:nth-child(1n) {
+  background-color: rgb(206, 17, 17);
+}
+
+@media screen and (max-width: 640px) {
+  .myGallerySwiper {
+    width: 250px;
+    height: 400px;
+    margin: 50px auto;
+  }
+}

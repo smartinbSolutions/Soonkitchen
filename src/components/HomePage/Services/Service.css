@@ -1,0 +1,102 @@
+.services {
+  text-align: center;
+  margin: 180px 0;
+  margin-bottom: 80px;
+}
+
+.services h2,
+.services h1 {
+  font-size: 40px;
+  color: #eb2629;
+  font-family: "Sniglet";
+}
+.services h1 {
+  color: #858585;
+}
+.services1 h1,
+.services1 h2 {
+  font-size: 25px;
+}
+
+.services1 {
+  padding: 100px 0;
+  text-align: start;
+  display: flex;
+  justify-content: space-around;
+}
+.services1 .service_content {
+  position: relative;
+}
+
+.services1 .service_content .service1 {
+  height: 50%;
+}
+.services1 .service_content,
+.services1 .service_img {
+  width: 25%;
+  overflow: hidden;
+}
+
+.services1 .service_img img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.services1 .service_content .service1 {
+  display: flex;
+  justify-content: space-around;
+}
+.services1 .service_content .service1 img {
+  width: 27%;
+  height: 52%;
+}
+.services1 .service_content .service1 div {
+  padding: 1px 20px;
+  width: 80%;
+}
+
+.services1 .service_content .service1 div p {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(139, 139, 139);
+}
+
+@media screen and (max-width: 640px) {
+  .services {
+    margin: 40px auto;
+  }
+
+  .services1 {
+    display: block;
+    padding: 20px 0;
+  }
+  .services1 h1,
+  .services1 h2 {
+    font-size: 13px;
+  }
+
+  .services1 .service_content .service1 div p {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(139, 139, 139);
+  }
+  .services1 .service_content .service1 img {
+    height: auto;
+  }
+  .services1 .service_content,
+  .services1 .service_img {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px auto;
+  }
+  .service1 {
+    margin: 30px auto;
+  }
+  .services1 .service_img {
+    text-align: center;
+  }
+  .services1 .service_img img {
+    object-fit: contain;
+    width: 50%;
+  }
+}

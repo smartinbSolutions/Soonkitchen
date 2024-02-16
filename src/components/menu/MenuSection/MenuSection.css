@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Readex+Pro:wght@400;500;600;700&display=swap");
+
+.menu-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #00000014;
+}
+
+.brand-card {
+  width: 100%; /* Kartların genişliği ayarlanabilir */
+  height: 200px; /* İstediğiniz yüksekliğe göre ayarlayabilirsiniz */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 23px;
+  overflow: hidden;
+}
+.brand-card > div > div {
+  padding: 10px;
+  height: 80%;
+  margin: auto;
+  width: 100%;
+}
+.swiper-Card {
+  width: 75%; /* Kartların genişliği ayarlanabilir */
+  height: 100%; /* İstediğiniz yüksekliğe göre ayarlayabilirsiniz */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 23px;
+}
+.brand-cardd {
+  width: 75%; /* Kartların genişliği ayarlanabilir */
+  height: 130px; /* İstediğiniz yüksekliğe göre ayarlayabilirsiniz */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 23px;
+  background-color: #ebebeb;
+}
+.swiper-wrapper {
+  padding-left: 32px;
+}
+.tabs-content .title {
+  background-color: #fff;
+}
+.tabs-content .swiper-wrapper {
+  padding-left: 0;
+  width: 90%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.brand-card img {
+  width: 50%;
+  height: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000 !important;
+  background-color: rgba(128, 122, 122, 0.5) !important;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 14px !important; /* İçerik (ikon) boyutunu ayarlayın */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.tabs-content {
+  margin: 40px 20px;
+  border-radius: 10px;
+}
+
+/* .menu-cat-back {
+  background: rgba(246, 17, 17, 0.17);
+  width: 120px;
+  height: 120px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  padding: 7.5px;
+  margin: auto;
+} */
+.fa-solid,
+.fas {
+  font-weight: 900;
+  font-size: 25px;
+  display: inline;
+  padding-left: 10px;
+}
+.swiper-slide .item {
+  font-size: 13px;
+  text-align: center;
+  display: inline;
+  background-color: #e94949;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 10px 10px 10px;
+}
+.meun-cat {
+  border-radius: 24px;
+  margin: 30px;
+  width: 100%;
+  margin: 20px auto;
+}
+.meun-cat > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.ss {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.product-card {
+  position: relative;
+  width: 35%;
+  height: 150px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+
+  /* Rover effect on hover */
+  &:hover {
+    transform: scale(1.05); /* Increase the size on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.product-card .pr-card {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+
+.product-card .pr-card .pr-info {
+  width: 70%;
+  text-align: start;
+}
+
+.product-card h1 {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.product-card p {
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+.product-card .pr-card .pr-price {
+  width: 25%;
+  text-align: center;
+}
+
+.pr-card .pr-price h2 {
+  margin-top: 30px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #e44c26bd;
+  font-family: "Readex Pro";
+}
+
+.product-img {
+  padding: 4px;
+
+  width: 180px;
+  height: 125px;
+  object-fit: cover;
+}
+.center-img {
+  position: absolute;
+  left: -90px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .menu-section {
+    background-color: #00000014;
+  }
+  .brand-card {
+    width: 100%;
+    height: 90px;
+  }
+
+  .brand-cardd {
+    height: 100%;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 23px;
+    background-color: #0000;
+    box-shadow: 0px 7px 22px rgba(195, 45, 45, 0);
+  }
+
+  .brand-card img {
+    width: 90%;
+  }
+  .swiper-wrapper {
+    padding-left: 10px;
+  }
+  .swiper-Card {
+    width: 100%;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 64% !important;
+    color: #000 !important;
+    background-color: rgba(128, 122, 122, 0.5) !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev {
+    right: 3px !important;
+  }
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    left: 3px !important;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 10px !important;
+  }
+  .tabs-content .title {
+    background-color: #fff;
+  }
+  /*prodect card*/
+  .ss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .product-card {
+    position: relative;
+    width: 90%;
+    height: 100px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+
+    /* Rover effect on hover */
+    &:hover {
+      transform: scale(1.05); /* Increase the size on hover */
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .product-card .pr-card {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-left: 13%;
+  }
+  .pr-card .pr-info {
+    width: 68%;
+  }
+  .pr-card .pr-price {
+    width: 32%;
+  }
+  .pr-card h1 {
+    margin-left: 10px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-family: "Readex Pro";
+  }
+
+  .pr-card p {
+    margin-left: 10px;
+    font-size: 9px;
+    margin-bottom: 10px;
+  }
+  .title img {
+    width: 32px;
+    height: 26px;
+    padding-right: 10px;
+  }
+
+  .pr-card .pr-price h2 {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e44c26b2;
+    font-family: "Readex Pro";
+  }
+
+  .center-img {
+    position: absolute;
+    left: -65px;
+    display: flex;
+    align-items: center;
+    top: 2px;
+  }
+  .product-img {
+    padding: 4px;
+    width: 140px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  /*prodect card*/
+
+  /* categorybar*/
+  .tabs-content {
+    margin: 20px 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
+}

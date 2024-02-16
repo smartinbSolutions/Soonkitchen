@@ -1,0 +1,119 @@
+.Header {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  font-size: 13px;
+  background-image: url(../../../Assets/images/pexels-daniela-constantini-5591664.jpg);
+  background-size: cover;
+  z-index: 999;
+  transition: opacity 0.5s ease; /* Transition ekleyin */
+}
+
+.Header .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  background-color: rgba(37, 37, 37, 0.596);
+  z-index: 2;
+}
+.Header ul {
+  position: relative;
+  padding: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  z-index: 99;
+}
+.Header ul li {
+  display: none;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 500;
+}
+.Header .logo {
+  position: relative;
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  z-index: 98;
+}
+.Header .soonText {
+  position: relative;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  z-index: 99;
+}
+.Header .soonText h1 {
+  padding: 20px;
+  width: 30%;
+  margin: auto;
+  border-bottom: 1px solid #fff;
+}
+.Header .soonText p {
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.Header .logo img {
+  position: absolute;
+  top: 8%;
+  left: 49%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  margin: auto;
+  width: 250px;
+  height: 250px;
+}
+.icons {
+  margin-right: 6px;
+}
+
+@media screen and (max-width: 767px) {
+  .Header {
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 55vh;
+    font-size: 13px;
+    background-size: cover;
+    background-image: url(../../../Assets/images/pexels-daniela-constantini-5591664.jpg);
+  }
+  .Header ul {
+    display: none;
+  }
+  .Header .logo {
+    height: 65%;
+  }
+  .Header .soonText {
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    z-index: 99;
+  }
+  .Header .soonText h1 {
+    padding: 5px;
+    width: 50%;
+    margin: auto;
+    border-bottom: 1px solid #fff;
+  }
+  .Header .soonText p {
+    padding: 5px;
+  }
+  .Header .logo img {
+    top: 38%;
+    width: 225px;
+    height: 200px;
+  }
+  .Header .overlay {
+    border-radius: 0;
+    background-color: rgba(39, 39, 39, 0.767);
+  }
+  .Header ul li {
+    color: rgb(255, 255, 255);
+    font-size: 8px;
+    font-weight: 600;
+  }
+}

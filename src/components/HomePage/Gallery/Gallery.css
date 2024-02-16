@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+.Gallery {
+  display: flex;
+  justify-content: space-around;
+  margin: 100px auto;
+}
+.Gallery .content {
+  width: 40%;
+}
+
+.Gallery .content h1 {
+  font-size: 40px;
+  color: #eb2629;
+  font-family: "Sniglet";
+  text-transform: uppercase;
+}
+
+.Gallery .content h2 {
+  width: 30%;
+  color: #6d6d6d;
+  font-size: 80px;
+  font-family: "Luckiest Guy", cursive;
+  padding-top: 50px;
+}
+@media screen and (max-width: 640px) {
+  .Gallery {
+    display: block;
+    text-align: center;
+    margin: 30px auto;
+  }
+  .Gallery .content {
+    width: 100%;
+  }
+  .Gallery .content h2 {
+    color: #6d6d6d;
+    font-size: 30px;
+    width: 100%;
+  }
+}

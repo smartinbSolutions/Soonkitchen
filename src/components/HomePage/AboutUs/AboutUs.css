@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+.aboutUs{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px auto;
+    width: 90%;
+    height: 700PX;
+ 
+}
+.aboutUs .AboutUs-Text{
+    width: 60%;
+    padding: 10%;
+    text-align: start;
+    margin: auto;
+}
+
+.aboutUs .AboutUs-Text h2 ,
+.aboutUs .AboutUs-Text h1 {
+    font-size: 40px;
+    color: #EB2629;
+    font-weight: thin;
+    font-family: 'Sniglet';
+    text-align: start !important;
+
+}
+.aboutUs .AboutUs-Text h1 {
+    padding: 5px 0;
+    color: #858585;
+}
+.aboutUs .AboutUs-Text p{
+    text-align: justify;
+    padding: 10px 0;
+    font-weight: 600;
+}
+.aboutUs .AboutUs-Text button {
+    font-weight: 600;
+    background-color: #EB2629;
+    color: #fff;
+    font-family: 'Sniglet';
+    font-weight: 500;
+    border: #ff0000 1px solid;
+    
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+
+.aboutUs .AboutUs-img{
+    width: 40%;
+}
+.aboutUs .AboutUs-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:640px) {
+
+    .aboutUs {
+        display: block;
+        margin: 20px auto;
+        margin-bottom: 40px;
+    }
+    .aboutUs .AboutUs-img{
+        width: 100%;
+    }
+    .aboutUs .AboutUs-Text{
+        width: 100%;
+    }
+}

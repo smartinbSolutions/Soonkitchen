@@ -1,0 +1,93 @@
+.lang_switch {
+  position: relative;
+  display: flex;
+  padding: 10px;
+}
+.lang_switch__text {
+  width: 71px;
+  height: 0px;
+  line-height: 0px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: rgb(87, 87, 87);
+}
+.lang_switch__text:first-of-type {
+  margin-right: 5px;
+}
+.lang_switch__blobs {
+  position: absolute;
+  z-index: -1;
+  top: -35%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: url("#goo");
+}
+.lang_switch__blobs::before,
+.lang_switch__blobs::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -6px;
+  left: 16px;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: #ff2929ee;
+  transition: transform 0.2s cubic-bezier(0.51, 0.06, 0.56, 1.37);
+  will-change: transform;
+}
+.lang_switch__blobs::before {
+  transform: scale(0.7);
+  transition-delay: 0.1s;
+  transition-duration: 0.4s;
+}
+.lang_switch.changed .lang_switch__blobs::before {
+  transform: translateX(85px) scale(0.7);
+}
+.lang_switch.changed .lang_switch__blobs::after {
+  transform: translateX(85px);
+}
+@media only screen and (min-width: 1025px) {
+  .lang_switch {
+    position: relative;
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    padding-top: 5%;
+  }
+  .lang_switch__text {
+    height: 25px;
+  }
+  .lang_switch__blobs::before,
+  .lang_switch__blobs::after {
+    top: 35px;
+    left: 17px;
+    width: 50px;
+    height: 50px;
+  }
+  .lang_switch__blobs::before {
+    transform: scale(1);
+    transition-delay: 0s;
+    transition-duration: 0.2s;
+  }
+  .lang_switch:hover {
+    cursor: pointer;
+  }
+  .lang_switch:not(.changed) .en:hover ~ .lang_switch__blobs::before {
+    transform: scale(0.9);
+  }
+  .lang_switch:not(.changed) .en:hover ~ .lang_switch__blobs::after {
+    transform: translateX(85px) scale(0.7);
+  }
+  .lang_switch.changed .lang_switch__blobs::before {
+    transform: translateX(85px);
+  }
+  .lang_switch.changed .pl:hover ~ .lang_switch__blobs::before {
+    transform: translateX(85px) scale(0.9);
+  }
+  .lang_switch.changed .pl:hover ~ .lang_switch__blobs::after {
+    transform: scale(0.7);
+  }
+}

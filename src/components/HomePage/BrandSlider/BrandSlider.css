@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+  padding: 2rem !important ;
+}
+
+.App-logo {
+  pointer-events: none;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+h2 {
+  color: white;
+}
+#our-partnerss {
+  background-color: #000000;
+  padding: 2rem !important ;
+}
+
+.mainContainer {
+  object-fit: cover;
+  background-color: #cfcfcf26;
+}
+
+.mainContainer .container {
+  padding: 4px 0;
+}
+
+.mainContainer .container img {
+  object-fit: contain !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  height: 80px;
+
+  max-width: 50%;
+}
+@media (max-width: 575px) {
+  #our-partnerss {
+    padding: 0.5rem 2rem 0.5rem 2rem !important ;
+  }
+  #our-partnerss button {
+    display: none !important;
+  }
+  .mainContainer .container img {
+    object-fit: cover !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    height: auto;
+    object-fit: contain;
+    width: 30%;
+    max-width: 100% !important;
+  }
+}
+.HelloMerhaba {
+  height: 80px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+div h3 {
+  color: white;
+  font-weight: bold;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

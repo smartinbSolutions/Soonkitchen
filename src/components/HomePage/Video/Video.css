@@ -1,0 +1,16 @@
+.video{
+    height: 500px;
+    position: relative;
+}
+
+.video > div {
+    height: 100%;
+}
+.video iframe{
+    border-radius: 30px;
+}
+@media screen and (max-width:640px) {
+    .video{
+        height: 250px !important;
+    }
+}
