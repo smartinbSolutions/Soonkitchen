@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { IoLocationSharp } from "react-icons/io5";
-import logo from "../../../Assets/logo/son.png";
+import logo from "../../../Assets/logo/Soon Kitchen Logo White.png";
 import { FaClock } from "react-icons/fa6";
 
 const Header = () => {
@@ -48,8 +48,7 @@ const Header = () => {
           </a>
         </div>
         <div className="soonText">
-          <h1>SOON KITCHEN</h1>
-          <p>MULTI BRANDS RESTURANT</p>
+          <h2>Hybrid Cloud Kitchen</h2>
         </div>
       </div>
     </>

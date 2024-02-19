@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import React from "react";
 import "./Mheader.css";
-import logo from "../../../Assets/logo/logo (2).png";
+import logo from "../../../Assets/logo/Soon Kitchen Logo.png";
 
 import { Container } from "reactstrap";
 import { Link } from "react-router-dom";

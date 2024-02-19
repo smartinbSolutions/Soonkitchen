@@ -308,7 +308,7 @@ export const data = [
     price: "180 ₺",
     info: "Domates Sos, Mozzarella, Fesleğen, Zeytinyağı",
     img: solo,
-    cat: "Pizza (Klasik Hamur - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -317,7 +317,7 @@ export const data = [
     price: "210 ₺",
     info: "Sucuk, mantar, mısır, domates, zeytin",
     img: solo,
-    cat: "Pizza (Klasik Hamur - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -326,7 +326,7 @@ export const data = [
     price: "210 ₺",
     info: "Tavuk, sezar sos, marul",
     img: solo,
-    cat: "Pizza (Klasik Hamur - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -335,7 +335,7 @@ export const data = [
     price: "190 ₺",
     info: "Avokado, kuru domates, ıspanak, kapya biber",
     img: solo,
-    cat: "Pizza (Klasik Hamur - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -344,7 +344,7 @@ export const data = [
     price: "280 ₺",
     info: "Füme Kaburga, roka, parmesan peyniri",
     img: solo,
-    cat: "Pizza (Klasik Hamur - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -353,7 +353,7 @@ export const data = [
     price: "190 ₺",
     info: "Ispanak, tulum peyniri, zeytinyağı",
     img: solo,
-    cat: "Pizza (Klasik Hamur - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -362,7 +362,7 @@ export const data = [
     price: "210 ₺",
     info: "Ton Balığı, mısır, zeytin",
     img: solo,
-    cat: "Pizza (Klasik Hamur - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -371,7 +371,7 @@ export const data = [
     price: "250 ₺",
     info: "Özel sucuk, mantar",
     img: solo,
-    cat: "Pizza (Klasik Hamur - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -380,7 +380,7 @@ export const data = [
     price: "240 ₺",
     info: "Mozeralla, gorgonzola, parmesan, taleggio",
     img: solo,
-    cat: "Pizza (Klasik Hamur - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -389,7 +389,7 @@ export const data = [
     price: "190 ₺",
     info: "Antep Peyniri, Roka, Sos",
     img: solo,
-    cat: "Pizza (Klasik Hamur - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -398,7 +398,7 @@ export const data = [
     price: "280 ₺",
     info: "S. Marzano, Domates Sos, Mozzarella, Fesleğen, Zeytinyağı",
     img: solo,
-    cat: "Pizza (Napoli Hamuru - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -407,7 +407,7 @@ export const data = [
     price: "320 ₺",
     info: "S. Marzano, Domates Sos, Mozzarella, Sucuk, K. Soğan",
     img: solo,
-    cat: "Pizza (Napoli Hamuru - 30 CM)",
+    cat: "Pizza",
     brand: 3,
   },
   {
@@ -1024,7 +1024,7 @@ export const data = [
     price: "280 ₺",
     info: "240 gr kuzu erkek eti\nDürüm:140 ₺",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Kebap",
     brand: 11,
   },
   {
@@ -1033,7 +1033,7 @@ export const data = [
     price: "280 ₺",
     info: "240 gr kuzu erkek eti, pul biber, kapya biber\nDürüm: 140 ₺",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Kebap",
     brand: 11,
   },
   {
@@ -1042,7 +1042,7 @@ export const data = [
     price: "300 ₺",
     info: "210 gr kuzu erkek eti\nDürüm: 150 ₺",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Kebap",
     brand: 11,
   },
   {
@@ -1051,7 +1051,7 @@ export const data = [
     price: "200 ₺",
     info: "Kıyma, Kuşbaşı, Ciğer & Tavuk",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Kebap",
     brand: 11,
   },
   {
@@ -1060,7 +1060,7 @@ export const data = [
     price: "310 ₺",
     info: "Kuşbaşı ya da kıyma tercihi ile",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Kebap",
     brand: 11,
   },
   {
@@ -1069,7 +1069,7 @@ export const data = [
     price: "280 ₺",
     info: "iskender usulü, 240 gr dana eti, yoğurt, tereyağı",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Köfte",
     brand: 11,
   },
   {
@@ -1078,7 +1078,7 @@ export const data = [
     price: "280 ₺",
     info: "240 gr kuzu erkek eti\nDürüm: 140 ₺",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Kebap",
     brand: 11,
   },
   {
@@ -1087,7 +1087,7 @@ export const data = [
     price: "250 ₺",
     info: "300 gr tavuk sarma\nDürüm: 125 ₺",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Tavuk",
     brand: 11,
   },
   {
@@ -1096,7 +1096,7 @@ export const data = [
     price: "250 ₺",
     info: "300 gr tavuk sarma ve özel sos",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Tavuk",
     brand: 11,
   },
   {
@@ -1105,7 +1105,7 @@ export const data = [
     price: "290 ₺",
     info: "220 gr kuzu erkek eti\nDürüm: 145 ₺",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Kebap",
     brand: 11,
   },
   {
@@ -1114,7 +1114,7 @@ export const data = [
     price: "350 ₺",
     info: "250 gr kuzu erkek eti",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Kebap",
     brand: 11,
   },
   {
@@ -1123,7 +1123,7 @@ export const data = [
     price: "260 ₺",
     info: "240 gr dana eti",
     img: hesiar,
-    cat: "Kebap & Köfte",
+    cat: "Köfte",
     brand: 11,
   },
   {
@@ -1401,6 +1401,9 @@ export const allLabel = [
   { id: 15, name: "Kebap", icon: "fa-solid fa-solar-panel" },
   { id: 16, name: "Sicak", icon: "fa-solid fa-solar-panel" },
   { id: 17, name: "Soguk", icon: "fa-solid fa-solar-panel" },
+  { id: 18, name: "Lahmacun", icon: "fa-solid fa-solar-panel" },
+  { id: 19, name: "Pide", icon: "fa-solid fa-solar-panel" },
+  { id: 20, name: "Tavuk", icon: "fa-solid fa-solar-panel" },
 ];
 export const logos = [
   { id: 1, img: `${img}`, name: "leyla" },
