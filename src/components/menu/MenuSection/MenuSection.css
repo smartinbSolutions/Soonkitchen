@@ -55,7 +55,7 @@
 .brand-card img {
   object-fit: contain !important;
   width: 50%;
-  height: 60px;
+  height: 85px;
 }
 
 .swiper-button-next,
@@ -228,7 +228,7 @@
 
   .brand-card img {
     width: 85%;
-    max-height: 40px;
+    max-height: 50px;
   }
   .swiper-wrapper {
     padding-left: 10px;

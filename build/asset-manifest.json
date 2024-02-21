@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.769610a6.css",
-    "main.js": "/static/js/main.e4a82ca0.js",
+    "main.css": "/static/css/main.8aafbabe.css",
+    "main.js": "/static/js/main.81483cff.js",
     "reactPlayerPreview.js": "/static/js/reactPlayerPreview.af74439e.chunk.js",
     "static/media/kindpng_694225.png": "/static/media/kindpng_694225.fdced79281544a3e938e.png",
     "static/media/soon.png": "/static/media/soon.10f09f73984963019f69.png",
@@ -9,6 +9,8 @@
     "static/media/burger1.png": "/static/media/burger1.c0988e605afd5ee432f2.png",
     "static/media/chicken4.png": "/static/media/chicken4.c4acdf41649fbd6163c8.png",
     "static/media/chicken3.png": "/static/media/chicken3.bbc7b7ed3c8683f1a138.png",
+    "static/media/Soon Kitchen Logo.png": "/static/media/Soon Kitchen Logo.f1e164c306956114ce3d.png",
+    "static/media/Soon Kitchen Logo White.png": "/static/media/Soon Kitchen Logo White.47c1aedd307ef5202f18.png",
     "static/media/soon2.png": "/static/media/soon2.eedf19379ebc5c3f3717.png",
     "static/media/pexels-daniela-constantini-5591664.jpg": "/static/media/pexels-daniela-constantini-5591664.d2c6dc1318f87a0a68f6.jpg",
     "static/media/10.png": "/static/media/10.dfa23b725b4abcd7b232.png",
@@ -30,8 +32,6 @@
     "static/media/sefa.png": "/static/media/sefa.50b61976763c06371ff3.png",
     "static/media/7.png": "/static/media/7.ce02d013548fb1e1da1a.png",
     "static/media/FredMondy.png": "/static/media/FredMondy.58ee4d112418a8b0437f.png",
-    "static/media/Soon Kitchen Logo White.png": "/static/media/Soon Kitchen Logo White.694b4e9afd17f478df4c.png",
-    "static/media/Soon Kitchen Logo.png": "/static/media/Soon Kitchen Logo.863714fb65b508775cff.png",
     "static/media/12.png": "/static/media/12.e1edad6759617c1cae69.png",
     "static/media/muc&mer.png": "/static/media/muc&mer.5dfd24f150e4ff39435f.png",
     "static/media/pexels-pixabay-262978.jpg": "/static/media/pexels-pixabay-262978.37215009d78a5c9a95e8.jpg",
@@ -52,12 +52,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.769610a6.css.map": "/static/css/main.769610a6.css.map",
-    "main.e4a82ca0.js.map": "/static/js/main.e4a82ca0.js.map",
+    "main.8aafbabe.css.map": "/static/css/main.8aafbabe.css.map",
+    "main.81483cff.js.map": "/static/js/main.81483cff.js.map",
     "reactPlayerPreview.af74439e.chunk.js.map": "/static/js/reactPlayerPreview.af74439e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.769610a6.css",
-    "static/js/main.e4a82ca0.js"
+    "static/css/main.8aafbabe.css",
+    "static/js/main.81483cff.js"
   ]
 }

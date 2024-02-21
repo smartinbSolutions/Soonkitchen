@@ -12,13 +12,19 @@
   font-weight: 600;
   color: rgb(87, 87, 87);
 }
+.en {
+  width: 93px;
+}
+.pl {
+  width: 62px;
+}
 .lang_switch__text:first-of-type {
   margin-right: 5px;
 }
 .lang_switch__blobs {
   position: absolute;
   z-index: -1;
-  top: -35%;
+  top: -34%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -60,6 +66,12 @@
   .lang_switch__text {
     height: 25px;
   }
+  .en {
+    width: 89px;
+  }
+  .pl {
+    width: 68px;
+  }
   .lang_switch__blobs::before,
   .lang_switch__blobs::after {
     top: 35px;
@@ -79,7 +91,7 @@
     transform: scale(0.9);
   }
   .lang_switch:not(.changed) .en:hover ~ .lang_switch__blobs::after {
-    transform: translateX(85px) scale(0.7);
+    transform: translateX(40px) scale(0.7);
   }
   .lang_switch.changed .lang_switch__blobs::before {
     transform: translateX(85px);
