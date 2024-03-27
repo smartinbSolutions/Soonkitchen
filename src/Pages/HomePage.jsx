@@ -1,6 +1,5 @@
 import React from "react";
 import Mheader from "../components/HomePage/Header/Mheader";
-import Menu from "../components/HomePage/Menu/Menu";
 import MySwiper2 from "../components/HomePage/Slider/MySwiper2";
 import AboutUS from "../components/HomePage/AboutUs/AboutUS";
 import Statics from "../components/HomePage/Statics/Statics";
@@ -18,7 +17,6 @@ const HomePage = () => {
       <MySwiper2 />
       <BrandSlider />
       <AboutUS />
-      {/* <Menu /> */}
       <Statics />
       <Video />
       <Services />
