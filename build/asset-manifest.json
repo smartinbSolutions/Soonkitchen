@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.8aafbabe.css",
-    "main.js": "/static/js/main.81483cff.js",
+    "main.css": "/static/css/main.6926f61b.css",
+    "main.js": "/static/js/main.0c743eff.js",
     "reactPlayerPreview.js": "/static/js/reactPlayerPreview.af74439e.chunk.js",
     "static/media/kindpng_694225.png": "/static/media/kindpng_694225.fdced79281544a3e938e.png",
     "static/media/soon.png": "/static/media/soon.10f09f73984963019f69.png",
     "static/media/slider2.png": "/static/media/slider2.bd92752adc1ee0195613.png",
     "static/media/burger1.png": "/static/media/burger1.c0988e605afd5ee432f2.png",
     "static/media/chicken4.png": "/static/media/chicken4.c4acdf41649fbd6163c8.png",
-    "static/media/chicken3.png": "/static/media/chicken3.bbc7b7ed3c8683f1a138.png",
     "static/media/Soon Kitchen Logo.png": "/static/media/Soon Kitchen Logo.f1e164c306956114ce3d.png",
     "static/media/Soon Kitchen Logo White.png": "/static/media/Soon Kitchen Logo White.47c1aedd307ef5202f18.png",
-    "static/media/soon2.png": "/static/media/soon2.eedf19379ebc5c3f3717.png",
     "static/media/pexels-daniela-constantini-5591664.jpg": "/static/media/pexels-daniela-constantini-5591664.d2c6dc1318f87a0a68f6.jpg",
     "static/media/10.png": "/static/media/10.dfa23b725b4abcd7b232.png",
     "static/media/pexels-valeria-boltneva-1833349.jpg": "/static/media/pexels-valeria-boltneva-1833349.067e739251bb387b0c50.jpg",
@@ -52,12 +50,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.8aafbabe.css.map": "/static/css/main.8aafbabe.css.map",
-    "main.81483cff.js.map": "/static/js/main.81483cff.js.map",
+    "main.6926f61b.css.map": "/static/css/main.6926f61b.css.map",
+    "main.0c743eff.js.map": "/static/js/main.0c743eff.js.map",
     "reactPlayerPreview.af74439e.chunk.js.map": "/static/js/reactPlayerPreview.af74439e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8aafbabe.css",
-    "static/js/main.81483cff.js"
+    "static/css/main.6926f61b.css",
+    "static/js/main.0c743eff.js"
   ]
 }
