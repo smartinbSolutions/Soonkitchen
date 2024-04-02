@@ -1,17 +1,46 @@
 import React from "react";
 import { useRef } from "react";
 import "./SwitchLang.css";
+import { useTranslation } from "react-i18next";
 
 const SwitchLang = () => {
   const langSwitchRef = useRef();
   const handleClick = () => {
     langSwitchRef.current.classList.toggle("changed");
   };
+
+  const { t, i18n } = useTranslation();
+  const changelang = (e) => {
+    // Access the data-value attribute
+    const lang = e.target.getAttribute("data-value");
+
+    i18n.changeLanguage(lang);
+
+    // Check if the element with id "selectedlang" exists before setting its text content
+    const selectedLangElement = document.getElementById("selectedlang");
+
+    if (selectedLangElement) {
+      selectedLangElement.textContent = lang.toUpperCase();
+    }
+  };
+
   return (
     <>
       <div ref={langSwitchRef} className="lang_switch" onClick={handleClick}>
-        <div className="lang_switch__text pl">TR</div>
-        <div className="lang_switch__text en">EN</div>
+        <div
+          className="lang_switch__text pl"
+          data-value="tr"
+          onClick={changelang}
+        >
+          TR
+        </div>
+        <div
+          className="lang_switch__text en"
+          data-value="en"
+          onClick={changelang}
+        >
+          EN
+        </div>
         <div className="lang_switch__blobs"></div>
       </div>
 

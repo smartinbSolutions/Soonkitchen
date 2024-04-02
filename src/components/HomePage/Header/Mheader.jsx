@@ -8,30 +8,35 @@ import logo from "../../../Assets/logo/Soon Kitchen Logo.png";
 import { Container } from "reactstrap";
 import { Link } from "react-router-dom";
 import SwitchLang from "../../ulity/SwitchLang";
+import TransHook from "../../../hook/locale/trans-hook";
 
-const navLinks = [
-  {
-    display: "Home",
-    url: "#",
-  },
-  {
-    display: "About",
-    url: "#",
-  },
-  {
-    display: "Brands",
-    url: "../../Brands",
-  },
-  {
-    display: "Recipes",
-    url: "#",
-  },
-  {
-    display: "Contect",
-    url: "#",
-  },
-];
+
+
+
 const Mheader = () => {
+  const [, , t]=TransHook()
+  const navLinks = [
+    {
+      display: `${t("home")}`,
+      url: "#",
+    },
+    {
+      display: `${t("aboutUs")}`,
+      url: "#",
+    },
+    {
+      display: `${t("Markalarımız")}`,
+      url: "../../Brands",
+    },
+    {
+      display: `${t("joinUs")}`,
+      url: "#",
+    },
+    {
+      display: `${t("contact")}`,
+      url: "#",
+    },
+  ];
   const menuRef = useRef();
   const menuToggle = () => menuRef.current.classList.toggle("active__menu");
   return (

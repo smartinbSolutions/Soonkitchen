@@ -34,7 +34,7 @@ const MySwiper2 = () => {
         {sliderData.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="content">
-              <h1>Welcome</h1>
+              {/* <h1>Welcome</h1> */}
               <h2>{slide.title}</h2>
               <p>{slide.desc}</p>
               <Link to="../../Brands">
