@@ -28,20 +28,7 @@ const Header = () => {
     <>
       <div className={headerClassName}>
         <div className="overlay"></div>
-        <ul>
-          <li>
-            <span>
-              <IoLocationSharp className="icons" />
-            </span>
-            Restaurant St, Delicious City, London 9578, UK
-          </li>
-          <li>
-            <span>
-              <FaClock className="icons" />
-            </span>{" "}
-            Daily : 8.00 am to 10.00 pm
-          </li>
-        </ul>
+
         <div className="logo">
           <a href="../../">
             <img src={logo} alt="logo" />
