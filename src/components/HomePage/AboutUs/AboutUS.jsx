@@ -1,8 +1,10 @@
 import React from "react";
 import "./AboutUs.css";
 import AboutImg from "../../../Assets/images/soon.png";
+import TransHook from "../../../hook/locale/trans-hook";
 
 const AboutUS = () => {
+  const [, , t] = TransHook();
   return (
     <div className="container">
       <div className="aboutUs">

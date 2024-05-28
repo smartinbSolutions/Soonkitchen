@@ -21,7 +21,7 @@ function Menusection() {
   };
   const filterByBrand = (cat) => {
     setSelectedBrand(cat.id);
-    setSelectedCategory("all");
+    // setSelectedCategory("all");
     setCount(cat.id);
   };
 
@@ -37,7 +37,7 @@ function Menusection() {
     setWindowWidth(window.innerWidth);
   }, [selectedBrand]);
 
-  const slidesPerView = windowWidth < 640 ? 3 : 5;
+  const slidesPerView = windowWidth < 640 ? 2 : 4;
   return (
     <>
       <div className="menu-section">
@@ -67,7 +67,7 @@ function Menusection() {
       </div>
 
       <div className="tabs-content">
-        <div className={`tab ${selectedCategory && "active-tab"}`}>
+        <div className={`tab`}>
           <div className="buttons meun-cat">
             <Swiper
               slidesPerView={slidesPerView}
@@ -82,6 +82,7 @@ function Menusection() {
                   } `}
                   onClick={() => filterByCategory(item.name)}
                 >
+                  <h2>{item.name}</h2>
                   <p className="item">{item.name}</p>
                 </SwiperSlide>
               ))}
