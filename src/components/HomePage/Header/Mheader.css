@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 .menu_right,
 .cart__icon {

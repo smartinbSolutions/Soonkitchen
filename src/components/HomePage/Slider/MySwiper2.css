@@ -1,8 +1,6 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Modak&family=Montserrat:wght@200;300;400;500;600&family=Sniglet:wght@400;800&family=Titan+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Modak&family=Montserrat:wght@200;300;400;500;600&family=Roboto:wght@400;800&family=Titan+One&display=swap");
 
 .mySwiper2 {
-   
   height: 500px;
   margin: 100px auto;
 }
@@ -12,12 +10,10 @@
   display: flex;
 }
 .swiper-slide .image {
-    width: 40%;
-    height: 100%;
-    position: relative;
-  }
-
-
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
 
 .swiper-slide .image img {
   margin: 0;
@@ -30,63 +26,60 @@
   object-fit: cover;
 }
 
-
 .swiper-slide .content {
   width: 60%;
   padding: 10%;
   text-align: start;
 }
 .swiper-slide .content h1,
-.swiper-slide .content h2{
-    font-size: 40px;
-    color: #EB2629;
-    font-weight: thin;
-    font-family: 'Sniglet';
-    text-align: start !important;
+.swiper-slide .content h2 {
+  font-size: 40px;
+  color: #eb2629;
+  font-weight: thin;
+  font-family: "Roboto", sans-serif;
+  text-align: start !important;
 }
-.swiper-slide .content h2{
-    color: #858585;
+.swiper-slide .content h2 {
+  color: #858585;
 }
 
 .swiper-slide .content p {
-    font-weight: 600;
-    padding: 20px 1px;
+  font-weight: 600;
+  padding: 20px 1px;
 }
 .swiper-slide .content button {
-    font-weight: 600;
-    background-color: #EB2629;
-    color: #fff;
-    font-family: 'Sniglet';
-    font-weight: 500;
-    border: #ff0000 1px solid;
-    
-    border-radius: 20px;
-    padding: 10px 30px;
+  font-weight: 600;
+  background-color: #eb2629;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  border: #ff0000 1px solid;
+
+  border-radius: 20px;
+  padding: 10px 30px;
 }
 .swiper-pagination-bullet-active {
-    background: #EB2629 !important;
+  background: #eb2629 !important;
 }
 
-@media screen and (max-width:640px) {
-
+@media screen and (max-width: 640px) {
   .mySwiper2 {
-   
     height: 400px;
     margin-bottom: 30px;
   }
-  
+
   .mySwiper2 .swiper-slide {
     background-color: #fff;
     display: block;
-}
-.mySwiper2 .swiper-slide .content {
-  display: none;
-}
-.mySwiper2 .swiper-slide .image {
-  width: 100%;
-}
-.mySwiper2 .swiper-slide .image img {
-  width:100%;
-  object-fit: contain;
-}
+  }
+  .mySwiper2 .swiper-slide .content {
+    display: none;
+  }
+  .mySwiper2 .swiper-slide .image {
+    width: 100%;
+  }
+  .mySwiper2 .swiper-slide .image img {
+    width: 100%;
+    object-fit: contain;
+  }
 }

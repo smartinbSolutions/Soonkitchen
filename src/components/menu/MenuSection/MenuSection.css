@@ -188,7 +188,7 @@
   font-size: 25px;
   font-weight: 700;
   color: #e44c26bd;
-  font-family: "Readex Pro";
+  font-family: "Roboto", sans-serif;
 }
 
 .product-img {
@@ -303,7 +303,7 @@
     font-size: 0.7rem;
     margin-bottom: 10px;
     margin-top: 10px;
-    font-family: "Readex Pro";
+    font-family: "Roboto", sans-serif;
   }
 
   .pr-card p {
@@ -322,7 +322,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     color: #e44c26b2;
-    font-family: "Readex Pro";
+    font-family: "Roboto", sans-serif;
   }
 
   .center-img {
