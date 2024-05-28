@@ -56,7 +56,7 @@ const Mheader = () => {
                   </li>
                 ))}
               </ul>
-              <SwitchLang />
+              {/* <SwitchLang /> */}
             </div>
           </div>
 
