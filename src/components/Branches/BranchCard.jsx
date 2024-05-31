@@ -20,7 +20,7 @@ const BranchCard = ({ img, title, phone, address, mapUrl }) => {
             target="_blank"
             style={{ textDecoration: "none" }}
           >
-            Go to
+            YOL TARİFİ
           </a>
         ) : null}
       </div>

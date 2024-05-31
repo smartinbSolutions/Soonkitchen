@@ -41,7 +41,7 @@ const Contact = () => {
               onClick={() => navigate("/branches")}
               style={{ cursor: "pointer" }}
             >
-              Branches
+              Şubelerimiz
             </p>
           </div>
           <div className="Contact-box">

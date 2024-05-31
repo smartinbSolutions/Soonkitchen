@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import M_img from "../../../Assets/images/kindpng_694225.png";
+import M_img from "../../../Assets/images/slider1.png";
 import img1 from "../../../Assets/images/delvery.png";
 import img2 from "../../../Assets/images/spoon.png";
 import img3 from "../../../Assets/images/meal.png";
@@ -13,14 +13,14 @@ const Services = () => {
     {
       title: "Paket Servis",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores recusandae",
+        "Lezzetli yemeklerimiz hızlı ve sıcak şekilde kapınıza teslim edilir.",
       image: img1,
       order: 1,
     },
     {
       title: "Salon Servisi",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores recusandae",
+        "Rahat ve şık bir ortamda, profesyonel servis ile unutulmaz yemek keyfi.",
       image: img2,
       order: 2,
     },
@@ -29,14 +29,14 @@ const Services = () => {
     {
       title: "Açık Mutfak",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores recusandae",
+        "Şeffaf açık mutfak konseptimizle, yemeklerimizin hazırlanışını izleyin.",
       image: img3,
       order: 1,
     },
     {
       title: "Hızlı & Lezzetli",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores recusandae",
+        "En kaliteli malzemelerle hızlı ve lezzetli yemekler sunuyoruz.",
       image: img2,
       order: 2,
     },

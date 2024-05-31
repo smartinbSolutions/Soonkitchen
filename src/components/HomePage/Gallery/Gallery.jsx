@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Gallery.css";
 import TransHook from "../../../hook/locale/trans-hook";
 import Slider from "react-slick";
@@ -37,21 +37,46 @@ export default function Gallery() {
     photo13,
     photo14,
   ];
+
+  const [slidesToShow, setSlidesToShow] = useState(5);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const windowWidth = window.innerWidth;
+      if (windowWidth <= 640 && windowWidth > 575) {
+        setSlidesToShow(2);
+      } else if (windowWidth <= 575) {
+        setSlidesToShow(1);
+      } else if (windowWidth <= 1000 && windowWidth > 640) {
+        setSlidesToShow(3);
+      } else {
+        setSlidesToShow(6);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const settings = {
     className: "center",
     infinite: true,
     centerPadding: "60px",
-    slidesToShow: 5,
+    slidesToShow: slidesToShow,
     swipeToSlide: true,
     afterChange: function (index) {
       /* Logic to do something when slide changes */
     },
   };
+
   return (
     <>
       <div className="gallery-section">
-        <h1>Have a look at our gallery</h1>
-        <h4 className="section-title">Customers took these pictures</h4>
+        <h1>Galerimize bir göz atınız</h1>
+        <h4 className="section-title">
+          Müşteriler tarafından alınan fotoğraflar
+        </h4>
         <Slider {...settings}>
           {images.map((image, i) => {
             return <img key={i} src={image} alt={`Gallery image ${i}`} />;

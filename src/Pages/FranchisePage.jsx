@@ -30,35 +30,35 @@ const FranchisePage = () => {
       <Form className="container bg-white mt-5 franchise-container">
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridName">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="First name" />
+            <Form.Label>Ad</Form.Label>
+            <Form.Control type="text" placeholder="Ad" />
           </Form.Group>
 
           <Form.Group as={Col} controlId="formGridLastName">
-            <Form.Label>Last name</Form.Label>
-            <Form.Control type="text" placeholder="Last name" />
+            <Form.Label>Soyad</Form.Label>
+            <Form.Control type="text" placeholder="Soyad" />
           </Form.Group>
         </Row>
 
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Label>E-posta</Form.Label>
+            <Form.Control type="email" placeholder="E-posta" />
           </Form.Group>
 
           <Form.Group as={Col} controlId="formGridPhone">
-            <Form.Label>Phone</Form.Label>
+            <Form.Label>Telefon</Form.Label>
             <Form.Control type="phone" placeholder="+90 *** *** ** **" />
           </Form.Group>
         </Row>
 
         <Form.Group className="mb-3" controlId="formGridMessage">
-          <Form.Label>Message</Form.Label>
-          <textarea rows={4} placeholder="Hi, I'm contacting for ..." />
+          <Form.Label>Mesaj</Form.Label>
+          <textarea rows={4} placeholder="Merhaba, size yazmamın sebebi ..." />
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Submit
+          Gönder
         </Button>
       </Form>
       <Footer />
