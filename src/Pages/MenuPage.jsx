@@ -1,15 +1,16 @@
 import React from "react";
-import Header from "../components/menu/Header/Header";
 import Menusection from "../components/menu/MenuSection/MenuSection";
-import Footer from "../components/ulity/Footer";
+import MenuFooter from "../components/menu/Footer/MenuFooter";
 
 const MenuPage = () => {
   return (
-    <div>
-      <Header />
-      <Menusection />
-      <Footer />
-    </div>
+    <>
+      {/* <Mheader /> */}
+      <div className="Menu_Page">
+        <Menusection />
+        <MenuFooter />
+      </div>
+    </>
   );
 };
 

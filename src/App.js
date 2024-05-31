@@ -1,4 +1,4 @@
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import "./App.css";
 import HomePage from "./Pages/HomePage";
@@ -7,13 +7,13 @@ import BrandsPage from "./Pages/BrandsPage";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/brands" element={<BrandsPage />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 

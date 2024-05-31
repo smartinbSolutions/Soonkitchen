@@ -1,131 +1,111 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { allLabel, data, logos } from "../../data";
 import "animate.css";
-import wow from "wowjs";
 import SwiperCore from "swiper/core";
 import "../menu/MenuSection/MenuSection.css";
 import "./Brands.css";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
-import { Container } from "reactstrap";
+import useGetData from "../../hook/api/useGetData";
 
 function BrandSection() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedBrand, setSelectedBrand] = useState(1);
-  const [Count, setCount] = useState(1);
+  const { data: BrandsData } = useGetData();
+  const [Brands, setBrands] = useState([]);
+  const [SelectedBrand, setSelectedBrand] = useState({});
+  const [Recipeis, setRecipeis] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const MenuRef = useRef(null);
   SwiperCore.use([Navigation]);
-  const filterByCategory = (cat) => {
-    setSelectedCategory(cat);
-  };
-  const filterByBrand = (cat) => {
-    setSelectedBrand(cat.id);
-    setSelectedCategory("all");
-    setCount(cat.id);
-  };
 
-  const filteredLabels = allLabel.filter((label) => {
-    return data.some(
-      (item) => item.brand === selectedBrand && item.cat === label.name
+  // Get Selected Brand Name and Desc
+  const handleLogoDesc = (id) => {
+    const selectedBrand = Brands.find((item) => item._id === id);
+    setSelectedBrand(selectedBrand);
+    if (selectedBrand) {
+      console.log(selectedBrand);
+      console.log(selectedBrand?.name);
+      console.log(selectedBrand?.desc);
+    } else {
+      console.log("Brand not found");
+    }
+  };
+  // Get Category Recipes
+  const GetCategoryRecipeis = (Cat_name) => {
+    const recipes = SelectedBrand?.recipe?.filter(
+      (recipe) => recipe.labelsName === Cat_name
     );
-  });
+    setRecipeis(recipes);
+  };
 
+  // Get the First Category Recipes When Page Load
+  const getFirstRecipes = () => {
+    const label = Brands[0]?.labels[0]?.name;
+    if (label) {
+      const recipes = SelectedBrand?.recipe?.filter(
+        (recipe) => recipe.labelsName === label
+      );
+      // If there are matching recipes, update the state and log the results
+      if (recipes && recipes.length > 0) {
+        setRecipeis(recipes);
+        console.log("Filtered recipes:", recipes);
+      } else {
+        console.log("No matching recipes found.");
+      }
+    } else {
+      console.log("Label not found.");
+    }
+  };
+
+  // Load states with info For first Time Load
   useEffect(() => {
-    const wowInstance = new wow.WOW();
-    wowInstance.init();
+    setBrands(BrandsData?.data);
+    setSelectedBrand(BrandsData?.data[0]);
+    if (Brands) getFirstRecipes();
     setWindowWidth(window.innerWidth);
-  }, [selectedBrand]);
+  }, [BrandsData, Brands]);
 
   const slidesPerView = windowWidth < 640 ? 3 : 5;
   return (
     <>
-      <div className="menu-section">
-        <div className="brand-card">
-          <div className="swiper-Card">
-            <Swiper slidesPerView={slidesPerView} navigation>
-              {logos.map((item, index) => (
-                <SwiperSlide
-                  key={index}
-                  className={`${selectedBrand === item.id && "active-btn"}`}
-                  onClick={() => {
-                    filterByBrand(item);
-                    if (MenuRef.current) {
-                      MenuRef.current.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                >
-                  <div className="brand-cardd">
-                    <img
-                      src={item.img}
-                      width={100}
-                      height={50}
-                      style={{ objectFit: "cover" }}
-                      alt={`Brand ${item.id}`}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
+      <div className="BrandsSwiper">
+        <Swiper slidesPerView={slidesPerView} navigation>
+          {Brands &&
+            Brands?.map((item, index) => (
+              <SwiperSlide
+                key={index}
+                onClick={() => {
+                  handleLogoDesc(item?._id);
+                }}
+              >
+                <div className="Brand_Card">
+                  <img src={item.logo} alt={`Brand ${item?._id}`} />
+                </div>
+              </SwiperSlide>
+            ))}
+        </Swiper>
       </div>
-
-      <div className="tabs-content" ref={MenuRef}>
-        <div className={`tab ${selectedCategory && "active-tab"}`}>
-          <div className="buttons meun-cat">
-            <Swiper
-              slidesPerView={slidesPerView}
-              style={{ color: "#000" }}
-              className="tab-buttons wow bounceInDown"
+      <div className="Brand_Desc">
+        <h6>{SelectedBrand?.name}</h6>
+        <p>{SelectedBrand?.desc}</p>
+      </div>
+      <div className="Brand_Cat">
+        <Swiper slidesPerView={4}>
+          {SelectedBrand?.labels?.map((item, index) => (
+            <SwiperSlide
+              key={index}
+              onClick={() => GetCategoryRecipeis(item?.name)}
             >
-              {filteredLabels.map((item, index) => (
-                <SwiperSlide
-                  key={index}
-                  className={`menu-menu-cat tab-btn ${
-                    selectedCategory === item.name && "active-btn"
-                  } `}
-                  onClick={() => filterByCategory(item.name)}
-                >
-                  <p className="item">{item.name}</p>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+              <p>{item?.name}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="Brand_Menu">
+        {Recipeis?.map((item, index) => (
+          <div key={index} className="Recipe_Card">
+            <h1>{item?.name}</h1>
           </div>
-          <Container>
-            <div className="ss">
-              {data.map((item, index) => {
-                return (
-                  <>
-                    {(selectedCategory === "lol" ||
-                      selectedCategory === "all" ||
-                      selectedCategory === item.cat) &&
-                    item.brand === selectedBrand ? (
-                      <div className="product-card">
-                        <div className="pr-card brandd-card">
-                          {" "}
-                          <div className="pr-info ">
-                            <h1>{item.name}</h1>
-                            <p>{item.info}</p>
-                          </div>
-                        </div>
-                        <div className="center-img">
-                          <img
-                            className="product-img"
-                            src={item.img}
-                            alt="ssss"
-                          />
-                        </div>
-                      </div>
-                    ) : null}
-                  </>
-                );
-              })}
-            </div>
-          </Container>
-        </div>
+        ))}
       </div>
     </>
   );

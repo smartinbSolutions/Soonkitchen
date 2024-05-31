@@ -1,130 +1,159 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { allLabel, data, logos } from "../../../data.js";
 import "animate.css";
-import wow from "wowjs";
 import SwiperCore from "swiper/core";
 import "./MenuSection.css";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
-import { Container } from "reactstrap";
+import logo from "../../../Assets/logo/Soon Kitchen Logo White.png";
+import useGetData from "../../../hook/api/useGetData.js";
+import ReactStars from "react-rating-stars-component";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as faSolidStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as faRegularStar } from "@fortawesome/free-regular-svg-icons";
 
 function Menusection() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [selectedBrand, setSelectedBrand] = useState(1);
-  const [Count, setCount] = useState(1);
+  const { data: BrandsData } = useGetData();
+  const [Brands, setBrands] = useState([]);
+  const [SelectedBrand, setSelectedBrand] = useState({});
+  const [Recipes, setRecipes] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   SwiperCore.use([Navigation]);
-  const filterByCategory = (cat) => {
-    setSelectedCategory(cat);
-  };
-  const filterByBrand = (cat) => {
-    setSelectedBrand(cat.id);
-    // setSelectedCategory("all");
-    setCount(cat.id);
-  };
-
-  const filteredLabels = allLabel.filter((label) => {
-    return data.some(
-      (item) => item.brand === selectedBrand && item.cat === label.name
-    );
-  });
-
+  // Handle window resize
   useEffect(() => {
-    const wowInstance = new wow.WOW();
-    wowInstance.init();
-    setWindowWidth(window.innerWidth);
-  }, [selectedBrand]);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-  const slidesPerView = windowWidth < 640 ? 2 : 4;
+  // Handle brand selection and fetch recipes
+  const handleLogoDesc = (id) => {
+    const selectedBrand = Brands.find((item) => item._id === id);
+    setSelectedBrand(selectedBrand);
+    getFirstRecipes(selectedBrand);
+  };
+
+  // Fetch recipes based on category name
+  const GetCategoryRecipes = (Cat_name) => {
+    const recipes = SelectedBrand?.recipe?.filter(
+      (recipe) => recipe.labelsName === Cat_name
+    );
+    setRecipes(recipes);
+  };
+
+  // Fetch all recipes for the selected brand
+  const GetAllCategoryRecipes = () => {
+    setRecipes(SelectedBrand?.recipe);
+  };
+
+  // Fetch the first category recipes when the page loads
+  const getFirstRecipes = (brand) => {
+    const label = brand?.labels[0]?.name;
+    if (label) {
+      const recipes = brand?.recipe?.filter(
+        (recipe) => recipe.labelsName === label
+      );
+      if (recipes && recipes.length > 0) {
+        setRecipes(recipes);
+        console.log("Filtered recipes:", recipes);
+      } else {
+        console.log("No matching recipes found.");
+      }
+    } else {
+      console.log("Label not found.");
+    }
+  };
+
+  // Set brands and initialize the first brand and recipes on data load
+  useEffect(() => {
+    if (BrandsData?.data) {
+      setBrands(BrandsData.data);
+      const firstBrand = BrandsData.data[0];
+      setSelectedBrand(firstBrand);
+      getFirstRecipes(firstBrand);
+    }
+  }, [BrandsData]);
+
+  const slidesPerView = windowWidth < 640 ? 3 : 5;
+
   return (
-    <>
-      <div className="menu-section">
-        <div className="brand-card">
-          <div className="swiper-Card">
-            <Swiper slidesPerView={slidesPerView} navigation>
-              {logos.map((item, index) => (
-                <SwiperSlide
-                  key={index}
-                  className={`${selectedBrand === item.id && "active-btn"}`}
-                  onClick={() => filterByBrand(item)}
-                >
-                  <div className="brand-cardd">
-                    <img
-                      src={item.img}
-                      width={100}
-                      height={50}
-                      style={{ objectFit: "cover" }}
-                      alt={`Brand ${item.id}`}
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+    <div className="Menu">
+      <div className="Menu_sec1">
+        <div className="Header">
+          <div className="overlay"></div>
+          <div className="logo">
+            <a href="../../">
+              <img src={logo} alt="logo" />
+            </a>
+          </div>
+          <div className="soonText">
+            <h2>Hybrid Cloud Kitchen</h2>
           </div>
         </div>
+        <div className="BrandsSwiper ">
+          <Swiper slidesPerView={slidesPerView} navigation>
+            {Brands.map((item, index) => (
+              <SwiperSlide key={index} onClick={() => handleLogoDesc(item._id)}>
+                <div className="Brand_Card">
+                  <img src={item.logo} alt={`Brand ${item._id}`} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
+      <div className="container">
+        <div className="Brand_Desc">
+          <p>{SelectedBrand?.desc}</p>
+        </div>
+        <div className="Brand_Cat">
+          <Swiper slidesPerView={3}>
+            <SwiperSlide onClick={GetAllCategoryRecipes}>
+              <p>All</p>
+            </SwiperSlide>
+            {SelectedBrand?.labels?.map((item, index) => (
+              <SwiperSlide
+                key={index}
+                onClick={() => GetCategoryRecipes(item.name)}
+              >
+                <p>{item.name}</p>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className="Brand_Menu">
+          {Recipes.map((item, index) => (
+            <div key={index} className="Recipe_Card">
+              <div className="Recipe_img">
+                <img src={item?.images[0]} alt="" />
+              </div>
+              <div className="Recipe_info">
+                <h6>{item?.name}</h6>
+                <p>{item?.labelsName}</p>
 
-      <div className="tabs-content">
-        <div className={`tab`}>
-          <div className="buttons meun-cat">
-            <Swiper
-              slidesPerView={slidesPerView}
-              style={{ color: "#000" }}
-              className="tab-buttons wow bounceInDown"
-            >
-              {filteredLabels.map((item, index) => (
-                <SwiperSlide
-                  key={index}
-                  className={`menu-menu-cat tab-btn ${
-                    selectedCategory === item.name && "active-btn"
-                  } `}
-                  onClick={() => filterByCategory(item.name)}
-                >
-                  <h2>{item.name}</h2>
-                  <p className="item">{item.name}</p>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-          <Container>
-            <div className="ss">
-              {data.map((item, index) => {
-                return (
-                  <>
-                    {(selectedCategory === "lol" ||
-                      selectedCategory === "all" ||
-                      selectedCategory === item.cat) &&
-                    item.brand === selectedBrand ? (
-                      <div className="product-card">
-                        <div className="pr-card">
-                          {" "}
-                          <div className="pr-info">
-                            <h1>{item.name}</h1>
-                            <p>{item.info}</p>
-                          </div>
-                          <div className="pr-price">
-                            <h2>{item.price}</h2>
-                          </div>
-                        </div>
-                        <div className="center-img">
-                          <img
-                            className="product-img"
-                            src={item.img}
-                            alt="ssss"
-                          />
-                        </div>
-                      </div>
-                    ) : null}
-                  </>
-                );
-              })}
+                <ReactStars
+                  count={5}
+                  size={16}
+                  isHalf={true}
+                  value={item?.rate}
+                  emptyIcon={<FontAwesomeIcon icon={faRegularStar} />}
+                  fullIcon={<FontAwesomeIcon icon={faSolidStar} />}
+                  color="#d3d3d3" // Color for empty stars
+                  activeColor="#ffd700" // Color for filled stars
+                />
+
+                <div className="price">
+                  <span>
+                    {item?.price} <span id="currency">₺</span>
+                  </span>
+                </div>
+              </div>
             </div>
-          </Container>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

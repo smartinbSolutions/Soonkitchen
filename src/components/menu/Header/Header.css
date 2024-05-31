@@ -1,11 +1,9 @@
 .Header {
-  position: relative;
   width: 100%;
-  height: 500px;
   font-size: 13px;
-  background-image: url(../../../Assets/images/pexels-daniela-constantini-5591664.jpg);
+  background-image: url(../../../Assets/images/pexels-tamarita-6467904.jpg);
   background-size: cover;
-  z-index: 999;
+  background-position: center;
   transition: opacity 0.5s ease; /* Transition ekleyin */
 }
 
@@ -57,16 +55,7 @@
   font-size: 15px;
   font-weight: 600;
 }
-.Header .logo img {
-  position: absolute;
-  top: 8%;
-  left: 49%;
-  transform: translateY(-50%);
-  transform: translateX(-50%);
-  margin: auto;
-  width: 250px;
-  height: 250px;
-}
+
 .icons {
   margin-right: 6px;
 }
@@ -76,16 +65,21 @@
     margin: 0;
     border-radius: 0;
     width: 100%;
-    height: 30vh;
+    height: 20vh;
     font-size: 13px;
     background-size: cover;
-    background-image: url(../../../Assets/images/pexels-daniela-constantini-5591664.jpg);
   }
-  .Header ul {
-    display: none;
+  .Header .overlay {
+    background-color: rgba(39, 39, 39, 0.767);
   }
   .Header .logo {
-    height: 65%;
+    width: 60%;
+    height: 60%;
+    margin-top: 40px !important;
+  }
+  .Header .logo img {
+    width: 50%;
+    height: auto;
   }
   .Header .soonText {
     position: relative;
@@ -102,15 +96,7 @@
   .Header .soonText p {
     padding: 5px;
   }
-  .Header .logo img {
-    top: 5%;
-    width: 225px;
-    height: 200px;
-  }
-  .Header .overlay {
-    border-radius: 0;
-    background-color: rgba(39, 39, 39, 0.767);
-  }
+
   .Header ul li {
     color: rgb(255, 255, 255);
     font-size: 8px;

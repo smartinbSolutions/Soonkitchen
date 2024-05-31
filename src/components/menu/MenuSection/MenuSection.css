@@ -1,348 +1,331 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Readex+Pro:wght@400;500;600;700&display=swap");
-
-.menu-section {
-  display: flex;
-  justify-content: center;
+.Menu_sec1 {
+  position: relative;
+  height: 400px;
+}
+.Menu_sec1 .Header {
+  position: absolute;
+  z-index: 999;
+  bottom: 50px;
+  top: 0;
+}
+.Menu_sec1 .Header .logo {
+  width: 54%;
+  height: 50%;
+  padding-top: 23px;
+}
+.Menu_sec1 .Header .soonText {
+  color: rgb(185 185 185);
+}
+.Menu_sec1 .BrandsSwiper {
+  position: absolute;
+  bottom: 3px;
   width: 100%;
-  background-color: #00000014;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #f5f5f5;
+  padding: 15px;
 }
-
-.brand-card {
-  width: 100%; /* Kartların genişliği ayarlanabilir */
-  height: 200px; /* İstediğiniz yüksekliğe göre ayarlayabilirsiniz */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 23px;
-  overflow: hidden;
+.Menu_sec1 .BrandsSwiper .swiper {
+  width: 70%;
 }
-.brand-card > div > div {
-  height: 100%;
-  margin: auto;
-  width: 100%;
+.Menu_sec1 .BrandsSwiper .Brand_Card {
+  width: 60% !important;
+  margin: auto !important;
 }
-.swiper-Card {
-  width: 75%; /* Kartların genişliği ayarlanabilir */
-  height: 100%; /* İstediğiniz yüksekliğe göre ayarlayabilirsiniz */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 23px;
+.Menu_sec1 .Brand_Card img {
+  width: 70px;
+  height: 75px;
+  object-fit: contain;
 }
-.brand-cardd {
-  width: 75%; /* Kartların genişliği ayarlanabilir */
-  height: 130px; /* İstediğiniz yüksekliğe göre ayarlayabilirsiniz */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 23px;
-  background-color: #ebebeb;
-}
-.swiper-wrapper {
-  padding-left: 32px;
-}
-.tabs-content .title {
-  background-color: #fff;
-}
-.tabs-content .swiper-wrapper {
-  padding-left: 0;
-  width: 90%;
-  text-align: center;
-  margin: 20px auto;
-}
-
-.brand-card img {
-  object-fit: contain !important;
-  width: 50%;
-  height: 85px;
-}
-
 .swiper-button-next,
 .swiper-button-prev {
-  color: #000 !important;
-  background-color: rgba(128, 122, 122, 0.5) !important;
-  width: 30px !important;
-  height: 30px !important;
-  border-radius: 50% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  top: 55% !important;
+  color: #000000 !important;
+  background-color: rgb(189 189 189 /0%) !important;
+  width: 20px !important;
+  height: 20px !important;
 }
-
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: 3px !important;
+}
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: 3px !important;
+}
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 14px !important; /* İçerik (ikon) boyutunu ayarlayın */
+  font-size: 10px !important;
 }
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background-color: rgba(209, 209, 209, 0.5) !important;
-}
-
-.tabs-content {
-  margin: 40px 20px;
-  border-radius: 10px;
-}
-
-/* .menu-cat-back {
-  background: rgba(246, 17, 17, 0.17);
-  width: 120px;
-  height: 120px;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  border-radius: 50%;
-  color: rgb(255, 255, 255);
-  padding: 7.5px;
+/* Brand Desc */
+.Brand_Desc {
+  background-color: #f5f5f5;
   margin: auto;
-} */
-.fa-solid,
-.fas {
-  font-weight: 900;
-  font-size: 25px;
-  display: inline;
-  padding-left: 10px;
-}
-.swiper-slide .item {
-  font-size: 13px;
-  text-align: center;
-  display: inline;
-  background-color: #e94949;
-  color: #fff;
-  border-radius: 20px;
-  padding: 10px 10px 10px 10px;
-}
-.meun-cat {
-  border-radius: 24px;
-  margin: 30px;
-  width: 100%;
-  margin: 20px auto;
-}
-.meun-cat > div > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-
-.ss {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.product-card {
-  position: relative;
-  width: 45%;
-  height: 150px;
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  justify-content: space-between;
-  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
-
-  /* Rover effect on hover */
-  &:hover {
-    transform: scale(1.05); /* Increase the size on hover */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  }
-}
-
-.product-card .pr-card {
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
-  width: 90%;
-}
-
-.product-card .pr-card .pr-info {
+  margin-top: 50px;
   width: 70%;
-  text-align: start;
-}
-
-.product-card h1 {
-  margin-left: 10px;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.product-card p {
-  margin-left: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  opacity: 0.6;
-}
-.product-card .pr-card .pr-price {
-  width: 25%;
+  padding: 35px;
   text-align: center;
+  border-radius: 15px;
 }
-
-.pr-card .pr-price h2 {
-  margin-top: 30px;
-  font-size: 25px;
+.Brand_Desc h6 {
+  font-family: "Pacifico", cursive;
+}
+.Brand_Desc p {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 20px;
+}
+.Brand_Cat {
+  padding: 10px;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+.Brand_Cat .swiper-wrapper {
+  padding-left: 0 !important;
+}
+.Brand_Cat p {
+  padding: 5px;
+  font-size: 16px;
+  margin: 0 10px;
   font-weight: 700;
-  color: #e44c26bd;
+  background-color: #ffeaeb;
+  color: #595959;
+  text-align: center;
+  border-radius: 10px;
+  height: 30px;
 }
-
-.product-img {
-  padding: 4px;
-
-  width: 180px;
-  height: 125px;
-  object-fit: cover;
-}
-.center-img {
-  position: absolute;
-  left: -90px;
+.Brand_Menu {
+  margin: auto;
   display: flex;
-  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 5%;
+}
+.Brand_Menu .Recipe_Card {
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  height: 120px;
+  width: 40%;
+  padding: 22px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+.Brand_Menu .Recipe_Card .Recipe_img {
+  position: absolute;
+  left: -112px;
+  width: 49%;
+  top: -66px;
+}
+.Brand_Menu .Recipe_Card .Recipe_info {
+  width: 60%;
+  padding: 5px;
+}
+.Brand_Menu .Recipe_Card .Recipe_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+}
+.Brand_Menu .Recipe_Card .Recipe_info h6 {
+  font-size: 16px;
+}
+
+.Brand_Menu .Recipe_Card .Recipe_info p {
+  color: #a3a3a3;
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-family: "Comfortaa", sans-serif;
+}
+.Brand_Menu .Recipe_Card .Recipe_info .price {
+  position: absolute;
+  right: 10px;
+  top: 33%;
+}
+.Brand_Menu .Recipe_Card .Recipe_info span {
+  color: #000000;
+  font-size: 31px;
+  font-weight: 600;
+  font-family: "Comfortaa", sans-serif;
+}
+.Brand_Menu .Recipe_Card .Recipe_info span #currency {
+  color: #ff0000;
+  font-family: "REM", sans-serif;
+}
+#star {
+  color: #ffa200;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 767px) {
-  .menu-section {
-    background-color: #00000014;
-    padding: 2%;
+  /* Menu Section one Header and Brand Slider */
+  .Menu_sec1 {
+    position: relative;
+    height: 30vh;
   }
-  .brand-card {
+  .Menu_sec1 .Header {
+    position: absolute;
+    z-index: 999;
+  }
+  .Menu_sec1 .Header .logo {
+    width: 54%;
+    height: 50%;
+    padding-top: 23px;
+  }
+  .Menu_sec1 .Header .soonText {
+    color: rgb(185 185 185);
+  }
+  .Menu_sec1 .BrandsSwiper {
+    position: absolute;
+    bottom: 3px;
     width: 100%;
+    right: 0;
+    padding: 0;
     height: 90px;
+    z-index: 1000;
+    background-color: #ededed;
+    margin: 0;
+    border-radius: 0;
   }
-
-  .brand-cardd {
-    height: 100%;
+  .Menu_sec1 .BrandsSwiper .swiper {
     width: 100%;
-    margin: auto;
+  }
+  .Menu_sec1 .BrandsSwiper .Brand_Card {
+    width: 60% !important;
+    margin: auto !important;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 23px;
-    background-color: #0000;
-    box-shadow: 0px 7px 22px rgba(195, 45, 45, 0);
   }
-
-  .brand-card img {
-    width: 41%;
-    max-height: 69px;
-  }
-  .swiper-wrapper {
-    padding-left: 10px;
-  }
-  .swiper-Card {
-    width: 100%;
+  .Menu_sec1 .Brand_Card img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
   }
   .swiper-button-next,
   .swiper-button-prev {
     top: 55% !important;
-    color: #655353 !important;
-    background-color: rgb(189 189 189 / 50%) !important;
+    color: #000000 !important;
+    background-color: rgb(189 189 189 / 0%) !important;
     padding: 20px;
-    width: 20px !important;
-    height: 20px !important;
+    width: 40px !important;
+    height: 40px !important;
   }
   .swiper-button-next,
   .swiper-rtl .swiper-button-prev {
-    right: 3px !important;
+    right: -10px !important;
   }
   .swiper-button-prev,
   .swiper-rtl .swiper-button-next {
-    left: 3px !important;
+    left: -10px !important;
   }
   .swiper-button-next::after,
   .swiper-button-prev::after {
-    font-size: 10px !important;
+    font-size: 16px !important;
+    font-weight: 700;
   }
-  .tabs-content .title {
-    background-color: #fff;
-  }
-  /*prodect card*/
-  .ss {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .product-card {
-    position: relative;
-    width: 90%;
-    height: 100px;
-    padding: 5px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: space-between;
-    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
-
-    /* Rover effect on hover */
-    &:hover {
-      transform: scale(1.05); /* Increase the size on hover */
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    }
-  }
-  .product-card .pr-card {
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
+  /* Brand Desc */
+  .Brand_Desc {
+    background-color: #f5f5f500;
+    margin: 0px;
+    padding-top: 0px;
+    padding: 0;
+    text-align: start;
+    border-radius: 15px;
     width: 100%;
-    margin-left: 13%;
   }
-  .pr-card .pr-info {
-    width: 68%;
+  .Brand_Desc h6 {
+    font-family: "Pacifico", cursive;
   }
-  .pr-card .pr-price {
-    width: 32%;
-  }
-  .pr-card h1 {
-    margin-left: 10px;
-    font-size: 0.7rem;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-
-  .pr-card p {
-    margin-left: 10px;
-    font-size: 9px;
-    margin-bottom: 10px;
-  }
-  .title img {
-    width: 32px;
-    height: 26px;
-    padding-right: 10px;
-  }
-
-  .pr-card .pr-price h2 {
-    margin-top: 30px;
-    font-size: 1.5rem;
+  .Brand_Desc p {
+    font-size: 12px;
     font-weight: 600;
-    color: #e44c26b2;
-  }
-
-  .center-img {
-    position: absolute;
-    left: -65px;
-    display: flex;
-    align-items: center;
-    top: 2px;
-  }
-  .product-img {
     padding: 4px;
-    width: 140px;
-    height: 100px;
+  }
+  .Brand_Cat {
+    margin: 5px;
+    padding: 0px;
+  }
+  .Brand_Cat .swiper-wrapper {
+    padding-left: 0 !important;
+  }
+  .Brand_Cat p {
+    padding: 5px;
+    font-size: 10px;
+    margin: 0 10px;
+    font-weight: 700;
+    background-color: #ffeaeb;
+    color: #595959;
+    text-align: center;
+    border-radius: 10px;
+    height: 22px;
+  }
+  .Brand_Menu {
+    margin: auto;
+    display: block;
+    width: 100%;
+  }
+  .Brand_Menu .Recipe_Card {
+    margin: auto;
+    position: relative;
+    height: 75px;
+    width: 75%;
+    padding: 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 20px;
+    border-radius: 15px;
+  }
+  .Brand_Menu .Recipe_Card .Recipe_img {
+    position: absolute;
+    left: -69px;
+    width: 49%;
+    top: -35px;
+  }
+  .Brand_Menu .Recipe_Card .Recipe_info {
+    width: 60%;
+    padding: 5px;
+  }
+  .Brand_Menu .Recipe_Card .Recipe_img img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    margin: auto;
+  }
+  .Brand_Menu .Recipe_Card .Recipe_info h6 {
+    font-size: 12px;
   }
 
-  /*prodect card*/
-
-  /* categorybar*/
-  .tabs-content {
-    margin: 20px 10px;
-    border-radius: 10px;
-    background-color: #ffffff;
+  .Brand_Menu .Recipe_Card .Recipe_info p {
+    color: #a3a3a3;
+    font-size: 8px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-family: "Comfortaa", sans-serif;
+  }
+  .Brand_Menu .Recipe_Card .Recipe_info .price {
+    position: absolute;
+    right: 10px;
+    top: 33%;
+  }
+  .Brand_Menu .Recipe_Card .Recipe_info span {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Comfortaa", sans-serif;
+  }
+  .Brand_Menu .Recipe_Card .Recipe_info span #currency {
+    color: #ff0000;
+    font-family: "REM", sans-serif;
+  }
+  #star {
+    color: #ffa200;
+    font-size: 20px;
   }
 }
