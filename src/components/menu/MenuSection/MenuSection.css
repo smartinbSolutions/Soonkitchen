@@ -13,6 +13,12 @@
   height: 50%;
   padding-top: 23px;
 }
+.Menu_sec1 .Header .logo img {
+  width: 54%;
+  height: 79%;
+  object-fit: contain;
+  padding-top: 3%;
+}
 .Menu_sec1 .Header .soonText {
   color: rgb(185 185 185);
 }

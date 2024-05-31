@@ -43,6 +43,7 @@ textarea {
   background-color: #f2f2f2;
   padding: 20px;
   width: 75% !important;
+  min-height: 580px;
 }
 .franchise-header {
   position: relative;
@@ -54,7 +55,6 @@ textarea {
   background-size: contain;
   z-index: 0;
   transition: opacity 0.5s ease;
-  margin-top: 6%;
 }
 .brands-title {
   padding-top: 6% !important;

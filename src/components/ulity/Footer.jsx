@@ -18,11 +18,11 @@ const Footer = () => {
     <div>
       <footer className="footer text-white">
         <Row>
-          <Col md={3} sm={12} id="logoAbout">
+          <Col md={4} sm={12} id="logoAbout">
             <img src={image} width={200} alt="Logo" />
             <p style={{ fontSize: "14px" }}>{t("footerAbout")}</p>
           </Col>
-          <Col md={6} sm={12} id="socialCopyright">
+          <Col md={4} sm={12} id="socialCopyright">
             <div className="SocialMediaIcons text-center">
               <a href="https://www.facebook.com/soonkitchen.co">
                 <i>
@@ -56,7 +56,7 @@ const Footer = () => {
               </p>
             </div>
           </Col>
-          <Col md={3} sm={12} className="pt-5" id="contact">
+          <Col md={4} sm={12} className="pt-5" id="contact">
             <h2
               className="text-center text-uppercase"
               style={{ marginTop: "13px" }}

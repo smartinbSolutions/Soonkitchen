@@ -17,6 +17,7 @@ import photo11 from "../../../Assets/images/photo11.jpg";
 import photo12 from "../../../Assets/images/photo12.jpg";
 import photo13 from "../../../Assets/images/photo13.jpg";
 import photo14 from "../../../Assets/images/photo14.jpg";
+import Mheader from "../Header/Mheader";
 
 export default function Gallery() {
   const [, , t] = TransHook();
@@ -47,14 +48,16 @@ export default function Gallery() {
     },
   };
   return (
-    <div className="gallery-section">
-      <h1>Have a look at our gallery</h1>
-      <h4 className="section-title">Customers took these pictures</h4>
-      <Slider {...settings}>
-        {images.map((image, i) => {
-          return <img key={i} src={image} alt={`Gallery image ${i}`} />;
-        })}
-      </Slider>
-    </div>
+    <>
+      <div className="gallery-section">
+        <h1>Have a look at our gallery</h1>
+        <h4 className="section-title">Customers took these pictures</h4>
+        <Slider {...settings}>
+          {images.map((image, i) => {
+            return <img key={i} src={image} alt={`Gallery image ${i}`} />;
+          })}
+        </Slider>
+      </div>
+    </>
   );
 }

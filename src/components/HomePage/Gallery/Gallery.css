@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 
 .gallery-section {
-  padding: 3.8rem 2rem 0;
   margin-bottom: 7.5rem;
 }
 .gallery-section h1 {
@@ -15,8 +14,10 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.gallery-section .slick-slider {
+  margin-top: 50px;
+}
 .gallery-section img {
-  width: 400px !important;
-  height: 300px !important;
+  height: 400px !important;
   object-fit: cover;
 }

@@ -16,6 +16,7 @@ import reyhan from "../../Assets/logo/reyhan_square.png";
 import sefa from "../../Assets/logo/sefa_square.png";
 import solo from "../../Assets/logo/solo_square.png";
 import soon from "../../Assets/logo/soon_square.png";
+import Mheader from "../HomePage/Header/Mheader";
 
 function BrandSection() {
   const images = [
@@ -34,20 +35,23 @@ function BrandSection() {
   ];
 
   return (
-    <div className="brandx">
-      <div className="rowx " style={{ justifyContent: "center" }}>
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt=""
-            className="mx-2"
-            /*onClick={ Add some logic }*/
-            style={{ cursor: "pointer" }}
-          />
-        ))}
+    <>
+      <Mheader />
+      <div className="brandx">
+        <div className="rowx " style={{ justifyContent: "center" }}>
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt=""
+              className="mx-2"
+              /*onClick={ Add some logic }*/
+              style={{ cursor: "pointer" }}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
