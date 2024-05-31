@@ -1,0 +1,90 @@
+.product-card {
+  margin-left: 1% !important;
+}
+
+.brandx .rowx {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  justify-content: center !important;
+}
+
+.brandx img {
+  margin: 20px !important;
+  border-radius: 10px !important;
+  flex-basis: 20% !important;
+  box-sizing: border-box !important;
+}
+
+.brands-page-title {
+  padding-top: 6% !important;
+}
+
+@media screen and (max-width: 900px) {
+  .brands-page-title {
+    padding-top: 18% !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .brandx {
+    margin-bottom: 40px !important;
+  }
+  .brands-page-title {
+    padding-top: 30% !important;
+  }
+  .brandx img {
+    height: auto !important;
+    border-radius: 10px !important;
+    width: 40% !important;
+    margin-top: 10px !important;
+  }
+  .brands-page-header {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    height: 20vh !important;
+    font-size: 13px !important;
+    background-size: cover !important;
+  }
+  .brands-page-header .brand-page-header-overlay {
+    background-color: rgba(39, 39, 39, 0.767) !important;
+  }
+  .brands-page-header .brands-page-logo {
+    width: 60% !important;
+    height: 60% !important;
+    margin-top: 40px !important;
+  }
+  .brands-page-header .brands-page-logo img {
+    width: 50% !important;
+    height: auto !important;
+  }
+}
+
+.brand-page-header {
+  width: 100% !important;
+  font-size: 13px !important;
+  background-image: url(../../Assets/images/pexels-tamarita-6467904.jpg) !important;
+  background-size: cover !important;
+  z-index: 999 !important;
+  transition: opacity 0.5s ease !important;
+}
+
+.brand-page-header .brand-page-header-overlay {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 0px !important;
+  background-color: rgba(37, 37, 37, 0.596) !important;
+  z-index: 2 !important;
+}
+
+.brands-page-header .brands-page-logo {
+  position: relative !important;
+  height: 50% !important;
+  width: 50% !important;
+  margin: auto !important;
+  text-align: center !important;
+  z-index: 98 !important;
+}

@@ -11,3 +11,87 @@
   max-width: 1300px !important;
   margin: auto !important;
 }
+
+.franchise-container input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.franchise-container input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.franchise-container input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.franchise-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 75% !important;
+}
+.franchise-header {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  font-size: 13px;
+  background-position: center;
+  background-image: url("/src/Assets/images/franchise-cover.jpg");
+  background-size: contain;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+  margin-top: 6%;
+}
+.brands-title {
+  padding-top: 6% !important;
+}
+.franchise-header .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  background-color: rgba(37, 37, 37, 0.6);
+  z-index: 2;
+}
+.franchise-header .logo {
+  position: relative;
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  z-index: 98;
+}
+@media screen and (max-width: 900px) {
+  .brands-title {
+    padding-top: 18% !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .brandx {
+    margin-bottom: 40px;
+  }
+  .brands-title {
+    padding-top: 30% !important;
+  }
+  .brandx img {
+    height: auto;
+    border-radius: 10px;
+    width: 40%;
+    margin-top: 10px;
+  }
+}

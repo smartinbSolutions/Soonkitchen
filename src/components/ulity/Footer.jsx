@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./Footer.css";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaXTwitter, FaTiktok } from "react-icons/fa6";
 import { Col, Row } from "react-bootstrap";
@@ -9,22 +9,18 @@ import image from "../../Assets/logo/soonlogowhite.png";
 import { TiLocation } from "react-icons/ti";
 import { FaPhone } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
+import TransHook from "./../../hook/locale/trans-hook";
 
 const Footer = () => {
+  const [, , t] = TransHook();
+
   return (
     <div>
       <footer className="footer text-white">
         <Row>
           <Col md={3} sm={12} id="logoAbout">
             <img src={image} width={200} alt="Logo" />
-            <p style={{ fontSize: "14px" }}>
-              Soon Kitchen hibrit cloud kitchen konseptli bir restoran
-              startupıdır. Bünyesinde bulunan 12 markası ile sektördeki
-              tecrübesini yenilikçi yaklaşımlar ve çözümler üretmek üzere
-              güncelleyen teknolojik bir gıda işletmesidir. Verimli mutfaklar
-              tasarlarken, gelen ya da paket sipariş eden müşterilerinin
-              memnuniyetlerini arttırmayı amaçlamaktadır.
-            </p>
+            <p style={{ fontSize: "14px" }}>{t("footerAbout")}</p>
           </Col>
           <Col md={6} sm={12} id="socialCopyright">
             <div className="SocialMediaIcons text-center">
@@ -38,14 +34,14 @@ const Footer = () => {
                   <RiInstagramFill />
                 </i>
               </a>
-              <a href="https://twitter.com/">
+              <a href="https://www.youtube.com/">
                 <i>
-                  <FaXTwitter />
+                  <FaYoutube />
                 </i>
               </a>
-              <a href="https://www.tiktok.com/">
+              <a href="https://linkedin.com/">
                 <i>
-                  <FaTiktok />
+                  <FaLinkedin />
                 </i>
               </a>
               <p id="copyright">
@@ -61,11 +57,16 @@ const Footer = () => {
             </div>
           </Col>
           <Col md={3} sm={12} className="pt-5" id="contact">
-            <h2 className="text-center">İLETİŞİM</h2>
-            <div className="d-flex mt-4 pt-1">
+            <h2
+              className="text-center text-uppercase"
+              style={{ marginTop: "13px" }}
+            >
+              {t("contact")}
+            </h2>
+            <div className="d-flex mt-4">
               <FaPhone />
               &nbsp;
-              <p>+850 242 26 27</p>
+              <p>+90 850 242 26 27</p>
             </div>
             <div className="d-flex">
               <IoIosMail />

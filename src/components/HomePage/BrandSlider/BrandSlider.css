@@ -33,10 +33,13 @@ h2 {
   color: white;
 }
 #our-partnerss {
-  background-color: #000000;
+  /* background-color: #f8f6eb; */
   padding: 2rem !important ;
 }
-
+.imagee {
+  width: 75% !important;
+  height: 75% !important;
+}
 .mainContainer {
   object-fit: cover;
   background-color: #cfcfcf26;
@@ -51,19 +54,21 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
   text-align: center;
   align-items: center;
-  height: 80px;
-
-  max-width: 50%;
 }
 @media (max-width: 575px) {
   #our-partnerss {
-    padding: 0.5rem 2rem 0.5rem 2rem !important ;
+    padding: 0 !important ;
   }
   #our-partnerss button {
     display: none !important;
+  }
+  .imagee {
+    width: 100% !important;
+    height: 100% !important;
+    margin-left: 101px !important;
+    margin-right: 101px !important;
   }
   .mainContainer .container img {
     object-fit: cover !important;

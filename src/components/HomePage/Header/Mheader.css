@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sacramento&display=swap");
 
-.header {
+.mheader {
   width: 100%;
   height: 110px;
   line-height: 80px;
@@ -10,33 +10,32 @@
   background-color: #fff;
   padding: 10px;
 }
-.navigation {
+.mheader-navigation {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   font-family: "Roboto", sans-serif;
 }
-.menu_right,
+/* .menu_right,
 .cart__icon {
   display: none !important;
-}
-.logo img {
+} */
+.mheader-logo img {
   width: 210px;
-  height: 202px;
   object-fit: contain;
 }
-.nav__list {
+.mheader-nav__list {
   display: flex;
   align-items: center;
   margin-bottom: 0;
   list-style: none;
   column-gap: 3rem;
 }
-.menu__right {
+/* .menu__right {
   display: none;
-}
+} */
 
-.nav__item a {
+.mheader-nav__item a {
   color: #5a5959;
   cursor: pointer;
   text-decoration: none;
@@ -44,48 +43,48 @@
   font-weight: 600;
 }
 
-.nav__item a:hover {
+.mheader-nav__item a:hover {
   color: #f50a0a;
 }
-.language span {
+/* .language span {
   padding: 1px 10px;
   cursor: pointer;
 }
 .language span:nth-child(1) {
   border-right: 2px solid #000;
-}
+} */
 
-.mobile__menu span i {
+.mheader-mobile__menu span i {
   font-size: 1.3rem;
   color: #eb1010;
 }
-.mobile__menu {
+.mheader-mobile__menu {
   display: none;
 }
 
 /* ==========  make it responsive ========= */
 
 @media only screen and (max-width: 992px) {
-  .header {
+  .mheader {
     padding: 10px;
   }
 
-  .navigation {
+  .mheader-navigation {
     justify-content: space-between;
   }
-  .navigation .language {
+  .mheader-navigation .language {
     display: none;
   }
-  .menu_right,
+  /* .menu_right,
   .cart__icon {
     display: none !important;
-  }
-  .logo img {
+  } */
+  .mheader-logo img {
     width: 100px;
     height: 70px;
     object-fit: contain;
   }
-  .nav__menu {
+  .mheader-nav__menu {
     position: fixed;
     top: 12%;
     width: 90%;
@@ -97,7 +96,7 @@
     border-radius: 15px;
     transition: all 0.5s ease-in-out;
   }
-  .nav__list__wrapper {
+  .mheader-nav__list__wrapper {
     position: absolute;
     top: 0;
     width: 100%;
@@ -110,31 +109,41 @@
     justify-content: center !important;
     padding: 0px 20px;
   }
-  .nav__list {
+  .mheader-nav__list {
     flex-direction: column;
     padding: 0;
   }
-  .nav__item a {
+  .mheader-nav__item a {
     font-size: 0.9rem;
     display: block;
     height: 70px;
   }
 
-  .custom__search {
+  /* .custom__search {
     border: 1px solid #c4c4c425;
     padding: 5px 15px;
     font-size: 0.9rem;
     height: 30px;
     margin-top: 15px;
-  }
-  .mobile__menu {
+  } */
+  .mheader-mobile__menu {
     display: block;
   }
-  .logo h2 {
+  .mheader-logo h2 {
     font-size: 1.5rem;
   }
-  .active__menu {
+  .mheader-active__menu {
     display: block;
     transition: all 0.5s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .mheader {
+    height: 80px !important;
+  }
+  .mheader-navigation .mheader-logo img,
+  .mheader-navigation .mheader-logo .mheader-nav__menu {
+    margin-top: -20px !important;
   }
 }

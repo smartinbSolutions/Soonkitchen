@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "../components/menu/Header/Header";
 import BrandSection from "../components/Brands/Brands";
 import Footer from "../components/ulity/Footer";
+import Mheader from "./../components/HomePage/Header/Mheader";
 
 const BrandsPage = () => {
   return (
     <div>
-      <Header />
+      {/* <Mheader /> */}
       <BrandSection />
       <Footer />
     </div>

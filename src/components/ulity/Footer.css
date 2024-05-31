@@ -88,6 +88,7 @@ p {
 
   #logoAbout {
     order: 1;
+    text-align: center;
   }
   #logoAbout img,
   #logoAbout p {
@@ -96,6 +97,13 @@ p {
   }
   #logoAbout p {
     margin-top: 0.5rem;
+    text-align: start;
+  }
+  #logoAbout img {
+    margin-top: -20px;
+  }
+  #logoAbout p {
+    margin-top: 20px;
   }
 
   #contact {
@@ -111,7 +119,7 @@ p {
   }
 
   #copyright {
-    margin-top: 10px;
+    margin-top: 50px;
     padding-top: 0;
   }
 

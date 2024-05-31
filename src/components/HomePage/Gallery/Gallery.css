@@ -1,39 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
-.Gallery {
-  display: flex;
-  justify-content: space-around;
-  margin: 100px auto;
-}
-.Gallery .content {
-  width: 40%;
-}
 
-.Gallery .content h1 {
-  font-size: 40px;
+.gallery-section {
+  padding: 3.8rem 2rem 0;
+  margin-bottom: 7.5rem;
+}
+.gallery-section h1 {
+  text-align: center;
   color: #eb2629;
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
+  letter-spacing: 0.005em;
 }
-
-.Gallery .content h2 {
-  width: 30%;
-  color: #6d6d6d;
-  font-size: 80px;
-  font-family: "Roboto", sans-serif;
-  padding-top: 50px;
+.gallery-section .section-title {
+  text-align: center;
+  color: #858585;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-@media screen and (max-width: 640px) {
-  .Gallery {
-    display: block;
-    text-align: center;
-    margin: 30px auto;
-  }
-  .Gallery .content {
-    width: 100%;
-  }
-  .Gallery .content h2 {
-    color: #6d6d6d;
-    font-size: 30px;
-    width: 100%;
-  }
+.gallery-section img {
+  width: 400px !important;
+  height: 300px !important;
+  object-fit: cover;
 }

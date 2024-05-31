@@ -1,15 +1,17 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import "./Statics.css";
-
-const staticList = [
-  { id: 1, Numb: 7, Text: "Cook" },
-  { id: 2, Numb: 13, Text: "Brand" },
-  { id: 3, Numb: 166, Text: "Recipe" },
-  { id: 4, Numb: 45, Text: "Staff" },
-];
+import TransHook from "./../../../hook/locale/trans-hook";
 
 const Statics = () => {
+  const [, , t] = TransHook();
+  const staticList = [
+    { id: 1, Numb: 1, Text: t("Mutfak") },
+    { id: 2, Numb: 13, Text: t("brand") },
+    { id: 3, Numb: 166, Text: t("recipe") },
+    { id: 4, Numb: 35, Text: t("staff") },
+  ];
+
   return (
     <Container>
       <div className="statics">

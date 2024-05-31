@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable jsx-a11y/anchor-has-content */
 import { useRef } from "react";
 import React from "react";
 import "./Mheader.css";
@@ -7,7 +5,6 @@ import logo from "../../../Assets/logo/Soon Kitchen Logo.png";
 
 import { Container } from "reactstrap";
 import { Link } from "react-router-dom";
-import SwitchLang from "../../ulity/SwitchLang";
 import TransHook from "../../../hook/locale/trans-hook";
 
 const Mheader = () => {
@@ -26,30 +23,31 @@ const Mheader = () => {
       url: "../../Brands",
     },
     {
-      display: `${t("joinUs")}`,
-      url: "#",
+      display: `Franchise`,
+      url: "/franchise",
     },
     {
-      display: `${t("contact")}`,
-      url: "#",
+      display: `İletişim`,
+      url: "contact",
     },
   ];
   const menuRef = useRef();
-  const menuToggle = () => menuRef.current.classList.toggle("active__menu");
+  const menuToggle = () =>
+    menuRef.current.classList.toggle("mheader-active__menu");
 
   return (
-    <header className="header fonts">
+    <header className="mheader">
       <Container>
-        <div className="navigation">
-          <div className="logo">
+        <div className="mheader-navigation">
+          <div className="mheader-logo">
             <img src={logo} alt="" />
           </div>
 
-          <div className="nav__menu" ref={menuRef}>
-            <div className="nav__list__wrapper d-flex align-items-center gap-5">
-              <ul className="nav__list">
+          <div className="mheader-nav__menu" ref={menuRef}>
+            <div className="mheader-nav__list__wrapper d-flex align-items-center gap-5">
+              <ul className="mheader-nav__list">
                 {navLinks.map((item, index) => (
-                  <li className="nav__item" key={index}>
+                  <li className="mheader-nav__item" key={index}>
                     <Link to={item.url}>{item.display}</Link>
                   </li>
                 ))}
@@ -58,7 +56,7 @@ const Mheader = () => {
             </div>
           </div>
 
-          <div className="mobile__menu" onClick={menuToggle}>
+          <div className="mheader-mobile__menu" onClick={menuToggle}>
             <span>
               <i className="fas fa-list"></i>
             </span>

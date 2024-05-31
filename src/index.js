@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./hook/locale/i18n";
+import "../src/components/menu/Header/Header.css";
 
 const queryClient = new QueryClient({});
 const root = ReactDOM.createRoot(document.getElementById("root"));
