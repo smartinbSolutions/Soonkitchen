@@ -18,6 +18,7 @@
   font-size: 40px;
   color: #eb2629;
   font-weight: thin;
+  font-family: "Roboto", sans-serif;
   text-align: start !important;
 }
 .aboutUs .AboutUs-Text h1 {
@@ -33,6 +34,7 @@
   font-weight: 600;
   background-color: #eb2629;
   color: #fff;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   border: #ff0000 1px solid;
 

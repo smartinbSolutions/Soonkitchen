@@ -10,11 +10,13 @@
 .statics .static h1 {
   font-size: 80px !important;
   font-weight: 700;
+  font-family: "Roboto", sans-serif;
 }
 .statics .static h2 {
   color: #bdbdbd;
   font-size: 70px !important;
   font-weight: 700;
+  font-family: "Roboto", sans-serif;
 }
 @media screen and (max-width: 640px) {
   .statics {

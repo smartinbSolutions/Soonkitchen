@@ -6,29 +6,58 @@
   object-fit: cover;
   height: 300px;
   z-index: 98;
+  display: flex;
   margin: 50px;
   margin-bottom: 30px;
   border-radius: 20px;
 }
 
-.SosialMidiaIcons {
+#logoAbout {
+  order: 1;
+}
+#logoAbout img {
+  padding-top: 3rem;
+  padding-left: 3rem;
+}
+#logoAbout p {
+  padding-top: 0.5rem;
+  padding-left: 3rem;
+}
+
+#socialCopyright {
+  order: 2;
+}
+
+#contact {
+  order: 3;
+}
+#contact svg {
+  width: 20px;
+  height: 20px;
+}
+
+.SocialMediaIcons {
   height: 100px;
   padding-top: 130px;
-  display: flex;
   justify-content: center;
 }
 
-.SosialMidiaIcons a {
+.SocialMediaIcons a {
   text-decoration: none;
   padding: 10px;
   margin: 10px;
   border-radius: 50%;
 }
 
-.SosialMidiaIcons a i {
+.SocialMediaIcons a i {
   font-size: 2em;
   opacity: 0.9;
   color: white;
+}
+
+#copyright {
+  margin-top: 3rem;
+  padding-top: 3rem;
 }
 
 .FooterBottom {
@@ -37,29 +66,75 @@
   text-align: center;
   padding: 10px;
 }
+
 .FooterBottom a {
   text-decoration: none;
   color: rgb(197, 202, 207);
 }
+
+p {
+  font-size: 14px;
+}
+
 @media screen and (max-width: 640px) {
   .footer {
-    height: 100px;
+    height: 100%;
     margin: 10px;
     border-radius: 10px;
     background-position: bottom;
     background-size: auto;
+    padding: 2.5rem;
   }
-  .footer .SosialMidiaIcons,
+
+  #logoAbout {
+    order: 1;
+  }
+  #logoAbout img,
+  #logoAbout p {
+    padding-top: 0;
+    padding-left: 0;
+  }
+  #logoAbout p {
+    margin-top: 0.5rem;
+  }
+
+  #contact {
+    order: 2;
+  }
+  #contact div {
+    justify-content: start;
+    display: flex;
+  }
+  #contact svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  #copyright {
+    margin-top: 10px;
+    padding-top: 0;
+  }
+
+  #socialCopyright {
+    order: 3;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .footer .SocialMediaIcons,
   .footer .FooterBottom {
     padding-top: 0 !important;
   }
-  .SosialMidiaIcons {
+
+  .SocialMediaIcons {
     height: 60px;
   }
-  .SosialMidiaIcons a i {
+
+  .SocialMediaIcons a i {
     font-size: 1em;
   }
+
   .FooterBottom p {
-    font-size: 10px;
+    font-size: 14px;
   }
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Modak&family=Montserrat:wght@200;300;400;500;600&family=Sniglet:wght@400;800&family=Titan+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Modak&family=Montserrat:wght@200;300;400;500;600&family=Roboto:wght@400;800&family=Titan+One&display=swap");
 
 .mySwiper2 {
   height: 500px;
@@ -36,6 +36,7 @@
   font-size: 40px;
   color: #eb2629;
   font-weight: thin;
+  font-family: "Roboto", sans-serif;
   text-align: start !important;
 }
 .swiper-slide .content h2 {
@@ -50,6 +51,7 @@
   font-weight: 600;
   background-color: #eb2629;
   color: #fff;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   border: #ff0000 1px solid;
 

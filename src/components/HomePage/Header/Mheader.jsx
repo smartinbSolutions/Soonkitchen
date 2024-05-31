@@ -10,11 +10,8 @@ import { Link } from "react-router-dom";
 import SwitchLang from "../../ulity/SwitchLang";
 import TransHook from "../../../hook/locale/trans-hook";
 
-
-
-
 const Mheader = () => {
-  const [, , t]=TransHook()
+  const [, , t] = TransHook();
   const navLinks = [
     {
       display: `${t("home")}`,
@@ -39,6 +36,7 @@ const Mheader = () => {
   ];
   const menuRef = useRef();
   const menuToggle = () => menuRef.current.classList.toggle("active__menu");
+
   return (
     <header className="header fonts">
       <Container>
