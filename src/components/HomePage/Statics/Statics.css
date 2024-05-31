@@ -1,22 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Readex+Pro:wght@400;500;600;700&display=swap");
 .statics {
+  background-image: url("/src/Assets/images/liquid-marbling-paint-texture-background-fluid-painting-abstract-texture-intensive-color-mix-wallpaper.jpg");
+  padding: 2%;
+  margin: 2% 0;
+}
+.statics .inner_statics {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   text-align: center;
   margin: 100px auto;
 }
-
 .statics .static h1 {
-  font-size: 80px !important;
-  font-weight: 700;
-  font-family: "Roboto", sans-serif;
+  font-size: 47px !important;
+  font-weight: 500;
+  color: aliceblue;
 }
 .statics .static h2 {
-  color: #bdbdbd;
-  font-size: 70px !important;
-  font-weight: 700;
-  font-family: "Roboto", sans-serif;
+  color: #d4d4d4;
+  font-size: 30px !important;
 }
 @media screen and (max-width: 640px) {
   .statics {

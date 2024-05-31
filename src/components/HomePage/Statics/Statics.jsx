@@ -13,8 +13,8 @@ const Statics = () => {
   ];
 
   return (
-    <Container>
-      <div className="statics">
+    <div className="statics">
+      <div className="inner_statics container">
         {staticList.map((item) => (
           <div className="static" key={item.id}>
             <h1>{item.Numb}</h1>
@@ -22,7 +22,7 @@ const Statics = () => {
           </div>
         ))}
       </div>
-    </Container>
+    </div>
   );
 };
 
