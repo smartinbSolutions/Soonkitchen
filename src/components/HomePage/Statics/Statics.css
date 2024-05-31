@@ -22,15 +22,15 @@
 }
 @media screen and (max-width: 640px) {
   .statics {
-    margin: 154px 0 82px 0;
+    margin: 20px 0;
   }
   .statics .static {
-    width: 40%;
+    width: 25%;
   }
   .statics .static h1 {
-    font-size: 50px !important;
+    font-size: 20px !important;
   }
   .statics .static h2 {
-    font-size: 40px !important;
+    font-size: 20px !important;
   }
 }

@@ -51,8 +51,8 @@ textarea {
   height: 250px;
   font-size: 13px;
   background-position: center;
-  background-image: url("/src/Assets/images/franchise-cover.jpg");
-  background-size: contain;
+  background-image: url("../src/Assets/images/pexels-jack-baghel-2199968-20408440.jpg");
+  background-size: cover;
   z-index: 0;
   transition: opacity 0.5s ease;
 }

@@ -5,13 +5,14 @@
 .brandx .rowx {
   display: flex !important;
   flex-wrap: wrap !important;
-  margin-left: 20px !important;
-  margin-right: 20px !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
   justify-content: center !important;
+  padding-top: 5%;
 }
 
 .brandx img {
-  margin: 20px !important;
+  margin: 5px !important;
   border-radius: 10px !important;
   flex-basis: 20% !important;
   box-sizing: border-box !important;

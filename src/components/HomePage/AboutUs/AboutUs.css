@@ -56,6 +56,7 @@
     display: block;
     margin: 20px auto;
     margin-bottom: 40px;
+    height: fit-content;
   }
   .aboutUs .AboutUs-img {
     width: 100%;

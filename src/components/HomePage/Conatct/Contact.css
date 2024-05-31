@@ -39,6 +39,7 @@
   .Contact .Contact-Methods .Contact-box {
     width: 45%;
     text-align: center;
+    display: block !important;
     margin: 5px;
     flex-wrap: wrap;
     border-right: 0px solid #ff0303bd;

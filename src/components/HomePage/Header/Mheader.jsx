@@ -12,11 +12,11 @@ const Mheader = () => {
   const navLinks = [
     {
       display: `${t("home")}`,
-      url: "#",
+      url: "/",
     },
     {
       display: `${t("aboutUs")}`,
-      url: "#",
+      url: "/",
     },
     {
       display: `${t("Markalarımız")}`,
@@ -28,7 +28,7 @@ const Mheader = () => {
     },
     {
       display: `İletişim`,
-      url: "contact",
+      url: "/",
     },
   ];
   const menuRef = useRef();

@@ -18,6 +18,7 @@ import solo from "../../Assets/logo/solo_square.png";
 import chuha from "../../Assets/logo/chuha_square.png";
 import soon from "../../Assets/logo/soon_square.png";
 import Mheader from "../HomePage/Header/Mheader";
+import backG from "../../Assets/images/pexels-jack-baghel-2199968-20408440.jpg";
 
 function BrandSection() {
   const images = [
@@ -42,12 +43,10 @@ function BrandSection() {
     height: "300px",
     fontSize: "13px",
     backgroundPosition: "center",
-    backgroundImage:
-      "url(https://cdn.turkishairlines.com/m/67d29f0e11396150/original/Web_3-jpg.jpg)",
+    backgroundImage: backG,
     backgroundSize: "cover",
     zIndex: "0",
     transition: "opacity 0.5s ease",
-    marginTop: "6%",
   };
 
   return (
@@ -70,7 +69,7 @@ function BrandSection() {
           </h1>
         </div>
       </div>
-      <div className="brandx">
+      <div className="brandx container">
         <div className="rowx " style={{ justifyContent: "center" }}>
           {images.map((image, index) => (
             <img
