@@ -37,7 +37,12 @@ const Contact = () => {
           </div>
           <div className="Contact-box">
             <img src={branches} alt="" />
-            <p onClick={() => navigate("/branches")}>Branches</p>
+            <p
+              onClick={() => navigate("/branches")}
+              style={{ cursor: "pointer" }}
+            >
+              Branches
+            </p>
           </div>
           <div className="Contact-box">
             <img src={location} alt="" />

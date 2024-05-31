@@ -15,6 +15,7 @@ import pion from "../../Assets/logo/pion_square.png";
 import reyhan from "../../Assets/logo/reyhan_square.png";
 import sefa from "../../Assets/logo/sefa_square.png";
 import solo from "../../Assets/logo/solo_square.png";
+import chuha from "../../Assets/logo/chuha_square.png";
 import soon from "../../Assets/logo/soon_square.png";
 import Mheader from "../HomePage/Header/Mheader";
 
@@ -31,12 +32,44 @@ function BrandSection() {
     reyhan,
     sefa,
     solo,
+    chuha,
     soon,
   ];
+
+  const style = {
+    position: "relative",
+    width: "100%",
+    height: "300px",
+    fontSize: "13px",
+    backgroundPosition: "center",
+    backgroundImage:
+      "url(https://cdn.turkishairlines.com/m/67d29f0e11396150/original/Web_3-jpg.jpg)",
+    backgroundSize: "cover",
+    zIndex: "0",
+    transition: "opacity 0.5s ease",
+    marginTop: "6%",
+  };
 
   return (
     <>
       <Mheader />
+      <div className="Header" style={style}>
+        <div className="overlay"></div>
+
+        <div className="logox">
+          <h1
+            className="text-center"
+            style={{
+              display: "inline-block",
+              position: "relative",
+              color: "#fff",
+            }}
+          >
+            Markalarımız
+            <span className="title-divider"></span>
+          </h1>
+        </div>
+      </div>
       <div className="brandx">
         <div className="rowx " style={{ justifyContent: "center" }}>
           {images.map((image, index) => (

@@ -42,7 +42,7 @@ const BranchesPage = () => {
         <div className="d-flex branch-card-container">
           <BranchCard
             img={"https://gaosb.org/uploads/editor/3.jpg"}
-            phone={"+90 538 417 15 33"}
+            phone={"+90 850 242 26 27"}
             address={
               "Batıkent, 9029 Nolu Sk Ekim Plaza Altı No:5, 27100 Şehitkamil/Gaziantep"
             }
