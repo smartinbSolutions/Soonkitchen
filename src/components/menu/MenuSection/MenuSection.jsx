@@ -49,11 +49,8 @@ function Menusection() {
 
   // Fetch the first category recipes when the page loads
   const getFirstRecipes = (brand) => {
-    const label = brand?.labels[0]?.name;
-    if (label) {
-      const recipes = brand?.recipe?.filter(
-        (recipe) => recipe.labelsName === label
-      );
+    if (brand?.labels) {
+      const recipes = brand?.recipe;
       if (recipes && recipes.length > 0) {
         setRecipes(recipes);
         console.log("Filtered recipes:", recipes);
@@ -68,8 +65,9 @@ function Menusection() {
   // Set brands and initialize the first brand and recipes on data load
   useEffect(() => {
     if (BrandsData?.data) {
-      setBrands(BrandsData.data);
-      const firstBrand = BrandsData.data[0];
+      setBrands(BrandsData?.data);
+      console.log(BrandsData?.data);
+      const firstBrand = BrandsData?.data[0];
       setSelectedBrand(firstBrand);
       getFirstRecipes(firstBrand);
     }
@@ -142,12 +140,12 @@ function Menusection() {
                   color="#d3d3d3" // Color for empty stars
                   activeColor="#ffd700" // Color for filled stars
                 />
+              </div>
 
-                <div className="price">
-                  <span>
-                    {item?.price} <span id="currency">₺</span>
-                  </span>
-                </div>
+              <div className="price">
+                <span>
+                  {item?.price} <span id="currency">₺</span>
+                </span>
               </div>
             </div>
           ))}

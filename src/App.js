@@ -1,4 +1,4 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 
 import "./App.css";
 import HomePage from "./Pages/HomePage";
@@ -9,7 +9,7 @@ import FranchisePage from "./Pages/FranchisePage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="/menu" element={<MenuPage />} />
@@ -18,7 +18,7 @@ function App() {
         {/* <Route path="/gallery" element={<GalleryPage />} /> */}
         <Route path="/franchise" element={<FranchisePage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

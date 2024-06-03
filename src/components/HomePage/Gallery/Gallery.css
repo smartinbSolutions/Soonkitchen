@@ -21,3 +21,9 @@
   height: 400px !important;
   object-fit: cover;
 }
+@media only screen and (max-width: 640px) {
+  .gallery-section .slick-slider {
+    width: 88%;
+    margin: auto;
+  }
+}

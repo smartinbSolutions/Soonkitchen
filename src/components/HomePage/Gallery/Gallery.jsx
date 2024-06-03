@@ -10,33 +10,10 @@ import photo4 from "../../../Assets/images/photo4.jpg";
 import photo5 from "../../../Assets/images/photo5.jpg";
 import photo6 from "../../../Assets/images/photo6.jpg";
 import photo7 from "../../../Assets/images/photo7.jpg";
-import photo8 from "../../../Assets/images/photo8.jpg";
-import photo9 from "../../../Assets/images/photo9.jpg";
-import photo10 from "../../../Assets/images/photo10.jpg";
-import photo11 from "../../../Assets/images/photo11.jpg";
-import photo12 from "../../../Assets/images/photo12.jpg";
-import photo13 from "../../../Assets/images/photo13.jpg";
-import photo14 from "../../../Assets/images/photo14.jpg";
-import Mheader from "../Header/Mheader";
 
 export default function Gallery() {
   const [, , t] = TransHook();
-  const images = [
-    photo1,
-    photo2,
-    photo3,
-    photo4,
-    photo5,
-    photo6,
-    photo7,
-    photo8,
-    photo9,
-    photo10,
-    photo11,
-    photo12,
-    photo13,
-    photo14,
-  ];
+  const images = [photo1, photo2, photo3, photo4, photo5, photo6, photo7];
 
   const [slidesToShow, setSlidesToShow] = useState(5);
 

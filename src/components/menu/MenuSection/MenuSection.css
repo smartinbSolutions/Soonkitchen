@@ -149,18 +149,18 @@
   font-weight: 600;
   font-family: "Comfortaa", sans-serif;
 }
-.Brand_Menu .Recipe_Card .Recipe_info .price {
+.Brand_Menu .Recipe_Card .price {
   position: absolute;
   right: 10px;
   top: 33%;
 }
-.Brand_Menu .Recipe_Card .Recipe_info span {
+.Brand_Menu .Recipe_Card span {
   color: #000000;
   font-size: 31px;
   font-weight: 600;
   font-family: "Comfortaa", sans-serif;
 }
-.Brand_Menu .Recipe_Card .Recipe_info span #currency {
+.Brand_Menu .Recipe_Card span #currency {
   color: #ff0000;
   font-family: "REM", sans-serif;
 }
@@ -281,22 +281,24 @@
   .Brand_Menu .Recipe_Card {
     margin: auto;
     position: relative;
-    height: 75px;
-    width: 75%;
+    height: 90px;
+    width: 96%;
     padding: 0px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    margin-top: 20px;
+    margin-top: 25px;
+    margin-left: 4%;
     border-radius: 15px;
   }
   .Brand_Menu .Recipe_Card .Recipe_img {
     position: absolute;
-    left: -69px;
-    width: 49%;
-    top: -35px;
+    left: -73px;
+    width: 52%;
+    top: -50px;
   }
   .Brand_Menu .Recipe_Card .Recipe_info {
-    width: 60%;
-    padding: 5px;
+    width: 75%;
+    padding: 10px;
+    padding-left: 10%;
   }
   .Brand_Menu .Recipe_Card .Recipe_img img {
     width: 100%;
@@ -305,28 +307,28 @@
     margin: auto;
   }
   .Brand_Menu .Recipe_Card .Recipe_info h6 {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .Brand_Menu .Recipe_Card .Recipe_info p {
     color: #a3a3a3;
-    font-size: 8px;
+    font-size: 12px;
     margin-bottom: 5px;
     font-weight: 600;
     font-family: "Comfortaa", sans-serif;
   }
-  .Brand_Menu .Recipe_Card .Recipe_info .price {
+  .Brand_Menu .Recipe_Card .price {
     position: absolute;
     right: 10px;
     top: 33%;
   }
-  .Brand_Menu .Recipe_Card .Recipe_info span {
+  .Brand_Menu .Recipe_Card span {
     color: #000000;
-    font-size: 16px;
+    font-size: 21px;
     font-weight: 600;
     font-family: "Comfortaa", sans-serif;
   }
-  .Brand_Menu .Recipe_Card .Recipe_info span #currency {
+  .Brand_Menu .Recipe_Card span #currency {
     color: #ff0000;
     font-family: "REM", sans-serif;
   }
