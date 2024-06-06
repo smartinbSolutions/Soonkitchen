@@ -84,23 +84,74 @@
 }
 .Brand_Cat {
   padding: 10px;
-  width: 70%;
+  width: 100%;
   margin: auto;
   margin-top: 50px;
+}
+.Brand_Cat .swiper-slide {
+  padding: 0 5px !important;
 }
 .Brand_Cat .swiper-wrapper {
   padding-left: 0 !important;
 }
+.Brand_Cat .cat_Card {
+  border: 1px solid #ffd4d4;
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  padding: 3%;
+  cursor: pointer;
+  position: relative;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+.cat_Card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px rgb(252, 160, 160);
+}
+
+.cat_Card:active:after {
+  box-shadow: 0 0 0 0 rgb(245, 189, 189);
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.cat_Card:active {
+  top: 1px;
+}
+.Brand_Cat .cat_Card span {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 50%;
+  padding: 5%;
+}
+
+.Brand_Cat .cat_Card img {
+  width: 100%;
+  height: 100%;
+}
 .Brand_Cat p {
-  padding: 5px;
-  font-size: 16px;
-  margin: 0 10px;
+  width: 60%;
+  font-size: 24px;
   font-weight: 700;
-  background-color: #ffeaeb;
-  color: #595959;
   text-align: center;
-  border-radius: 10px;
-  height: 30px;
+  margin-bottom: 0 !important;
 }
 .Brand_Menu {
   margin: auto;
@@ -167,6 +218,22 @@
 #star {
   color: #ffa200;
   font-size: 20px;
+}
+/* Keyframes for fade up animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Applying the fade-up animation */
+.fade-up {
+  animation: fadeUp 1s ease-in-out;
 }
 
 @media screen and (max-width: 767px) {
@@ -259,19 +326,14 @@
     margin: 5px;
     padding: 0px;
   }
-  .Brand_Cat .swiper-wrapper {
-    padding-left: 0 !important;
+
+  .Brand_Cat .cat_Card span {
+    width: 35px;
+    height: 35px;
   }
+
   .Brand_Cat p {
-    padding: 5px;
     font-size: 10px;
-    margin: 0 10px;
-    font-weight: 700;
-    background-color: #ffeaeb;
-    color: #595959;
-    text-align: center;
-    border-radius: 10px;
-    height: 22px;
   }
   .Brand_Menu {
     margin: auto;

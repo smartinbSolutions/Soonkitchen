@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "animate.css";
-import SwiperCore from "swiper/core";
-import "./MenuSection.css";
-import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
+import SwiperCore from "swiper";
+import "./MenuSection.css";
 import logo from "../../../Assets/logo/Soon Kitchen Logo White.png";
 import useGetData from "../../../hook/api/useGetData.js";
 import ReactStars from "react-rating-stars-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as faSolidStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faRegularStar } from "@fortawesome/free-regular-svg-icons";
+import CatImg from "../../../Assets/images/diet_561611.png";
+import CatImg2 from "../../../Assets/images/hot-pot_3183463.png";
+import { Navigation } from "swiper/modules";
+
+SwiperCore.use([Navigation]);
 
 function Menusection() {
   const { data: BrandsData } = useGetData();
@@ -19,61 +22,66 @@ function Menusection() {
   const [SelectedBrand, setSelectedBrand] = useState({});
   const [Recipes, setRecipes] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  SwiperCore.use([Navigation]);
-  // Handle window resize
+  const [animationClass, setAnimationClass] = useState(""); // New state for animation class
+
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Handle brand selection and fetch recipes
+  // Function to handle brand selection and filter recipes
   const handleLogoDesc = (id) => {
     const selectedBrand = Brands.find((item) => item._id === id);
     setSelectedBrand(selectedBrand);
+    setAnimationClass("fade-up");
     getFirstRecipes(selectedBrand);
   };
 
-  // Fetch recipes based on category name
+  // Function to fetch recipes based on category name
   const GetCategoryRecipes = (Cat_name) => {
     const recipes = SelectedBrand?.recipe?.filter(
       (recipe) => recipe.labelsName === Cat_name
     );
+    setAnimationClass("fade-up");
     setRecipes(recipes);
   };
 
-  // Fetch all recipes for the selected brand
+  // Function to fetch all recipes for the selected brand
   const GetAllCategoryRecipes = () => {
+    setAnimationClass("fade-up");
     setRecipes(SelectedBrand?.recipe);
   };
 
-  // Fetch the first category recipes when the page loads
+  // Function to fetch the first category recipes when the page loads
   const getFirstRecipes = (brand) => {
-    if (brand?.labels) {
+    if (brand?.recipe) {
       const recipes = brand?.recipe;
       if (recipes && recipes.length > 0) {
         setRecipes(recipes);
-        console.log("Filtered recipes:", recipes);
       } else {
-        console.log("No matching recipes found.");
+        setRecipes([]);
       }
-    } else {
-      console.log("Label not found.");
     }
   };
 
-  // Set brands and initialize the first brand and recipes on data load
+  // Function to initialize brands and recipes
   useEffect(() => {
     if (BrandsData?.data) {
       setBrands(BrandsData?.data);
-      console.log(BrandsData?.data);
       const firstBrand = BrandsData?.data[0];
       setSelectedBrand(firstBrand);
       getFirstRecipes(firstBrand);
     }
   }, [BrandsData]);
 
-  const slidesPerView = windowWidth < 640 ? 3 : 5;
+  useEffect(() => {
+    // Remove the animation class after the animation ends
+    const timeout = setTimeout(() => setAnimationClass(""), 1000); // 1000ms matches the animation duration
+    return () => clearTimeout(timeout);
+  }, [Recipes]); // Run this effect whenever Recipes change
+
+  const slidesPerView = windowWidth < 640 ? 4 : 5;
 
   return (
     <div className="Menu">
@@ -89,7 +97,7 @@ function Menusection() {
             <h2>Hybrid Cloud Kitchen</h2>
           </div>
         </div>
-        <div className="BrandsSwiper ">
+        <div className="BrandsSwiper">
           <Swiper slidesPerView={slidesPerView} navigation>
             {Brands.map((item, index) => (
               <SwiperSlide key={index} onClick={() => handleLogoDesc(item._id)}>
@@ -102,27 +110,45 @@ function Menusection() {
         </div>
       </div>
       <div className="container">
-        <div className="Brand_Desc">
+        <div className={`Brand_Desc`}>
           <p>{SelectedBrand?.desc}</p>
         </div>
         <div className="Brand_Cat">
-          <Swiper slidesPerView={3}>
+          <Swiper slidesPerView={slidesPerView}>
             <SwiperSlide onClick={GetAllCategoryRecipes}>
-              <p>All</p>
+              <div className={`cat_Card `}>
+                <span>
+                  <img src={CatImg} alt="Cat_Img" />
+                </span>
+                <p>All</p>
+              </div>
             </SwiperSlide>
             {SelectedBrand?.labels?.map((item, index) => (
               <SwiperSlide
                 key={index}
                 onClick={() => GetCategoryRecipes(item.name)}
               >
-                <p>{item.name}</p>
+                <div className={`cat_Card`}>
+                  <span>
+                    <img
+                      src={item.icon || CatImg2}
+                      alt={item.name || "Category Image"}
+                      onError={(e) => {
+                        e.target.onerror = null; // Prevent looping
+                        e.target.src = CatImg2; // Fallback image
+                        console.error(`Failed to load image: ${item.image}`);
+                      }}
+                    />
+                  </span>
+                  <p>{item.name}</p>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-        <div className="Brand_Menu">
+        <div className={`Brand_Menu ${animationClass}`}>
           {Recipes.map((item, index) => (
-            <div key={index} className="Recipe_Card">
+            <div key={index} className={`Recipe_Card ${animationClass}`}>
               <div className="Recipe_img">
                 <img src={item?.images[0]} alt="" />
               </div>
@@ -137,8 +163,8 @@ function Menusection() {
                   value={item?.rate}
                   emptyIcon={<FontAwesomeIcon icon={faRegularStar} />}
                   fullIcon={<FontAwesomeIcon icon={faSolidStar} />}
-                  color="#d3d3d3" // Color for empty stars
-                  activeColor="#ffd700" // Color for filled stars
+                  color="#d3d3d3"
+                  activeColor="#ffd700"
                 />
               </div>
 

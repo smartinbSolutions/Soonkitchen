@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d7e862cc.css",
-    "main.js": "/static/js/main.4d44522b.js",
+    "main.css": "/static/css/main.231150b8.css",
+    "main.js": "/static/js/main.e847916c.js",
     "reactPlayerPreview.js": "/static/js/reactPlayerPreview.af74439e.chunk.js",
     "static/media/pexels-jack-baghel-2199968-20408440.jpg": "/static/media/pexels-jack-baghel-2199968-20408440.22521cc53c240fe7f7c2.jpg",
     "static/media/pexels-tamarita-6467904.jpg": "/static/media/pexels-tamarita-6467904.b70802bc6a35cec5f4fc.jpg",
@@ -19,6 +19,7 @@
     "static/media/photo3.jpg": "/static/media/photo3.6800f7ca7fdf42d5e47f.jpg",
     "static/media/ghuha.png": "/static/media/ghuha.ac593255497410763119.png",
     "static/media/fredmondy.png": "/static/media/fredmondy.46ecd589b1feec70c2d9.png",
+    "static/media/diet_561611.png": "/static/media/diet_561611.db502210854831dbe3a0.png",
     "static/media/fa-regular-400.ttf": "/static/media/fa-regular-400.eb91f7b948a42799f678.ttf",
     "static/media/burger1.png": "/static/media/burger1.6d93785bfac64f9e960e.png",
     "static/media/sefa.png": "/static/media/sefa.d0489c7def8ea6229446.png",
@@ -29,6 +30,7 @@
     "static/media/5.png": "/static/media/5.ef791906ee170992d7de.png",
     "static/media/chicken4.png": "/static/media/chicken4.160d183b16321dddfe8d.png",
     "static/media/pion.png": "/static/media/pion.e9632dc2da67d07fcabc.png",
+    "static/media/hot-pot_3183463.png": "/static/media/hot-pot_3183463.29285179207de60cb81c.png",
     "static/media/leylaq.png": "/static/media/leylaq.b646b0bed2ff803f8897.png",
     "static/media/6.png": "/static/media/6.2f76b078d1b67fb690ee.png",
     "static/media/mufa.png": "/static/media/mufa.e7855eaf8ac38da23776.png",
@@ -65,12 +67,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.d7e862cc.css.map": "/static/css/main.d7e862cc.css.map",
-    "main.4d44522b.js.map": "/static/js/main.4d44522b.js.map",
+    "main.231150b8.css.map": "/static/css/main.231150b8.css.map",
+    "main.e847916c.js.map": "/static/js/main.e847916c.js.map",
     "reactPlayerPreview.af74439e.chunk.js.map": "/static/js/reactPlayerPreview.af74439e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7e862cc.css",
-    "static/js/main.4d44522b.js"
+    "static/css/main.231150b8.css",
+    "static/js/main.e847916c.js"
   ]
 }
