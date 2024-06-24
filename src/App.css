@@ -6,16 +6,26 @@
   margin: 0;
   font-family: "Comfortaa", sans-serif;
 }
-
-.container {
-  max-width: 1300px !important;
-  margin: auto !important;
+body {
+  position: relative;
+  height: 100%;
 }
-
+#root {
+  height: 100%;
+}
+.dzu-previewContainer {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+.dzu-previewContainer img {
+  width: 100%;
+  height: 100%;
+}
 .franchise-container input[type="text"],
 select,
 textarea {
-  width: 100%;
+  width: 60%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -93,5 +103,19 @@ textarea {
     border-radius: 10px;
     width: 40%;
     margin-top: 10px;
+  }
+}
+
+/* containers*/
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1440px !important;
+    margin-left: 18% !important;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1800px) {
+  .container {
+    max-width: 1000px !important;
+    margin-left: 13% !important;
   }
 }

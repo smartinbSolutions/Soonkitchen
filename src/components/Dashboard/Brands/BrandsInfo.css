@@ -1,0 +1,16 @@
+.OneBrand {
+  height: 100px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  justify-content: space-between;
+  padding: 2%;
+  align-items: center;
+  margin: 40px 0;
+}
+.OneBrand .BrandInfo img {
+  height: 40px;
+}
+.OneBrand .BrandStatic p {
+  display: inline;
+  margin: 0 20px;
+}

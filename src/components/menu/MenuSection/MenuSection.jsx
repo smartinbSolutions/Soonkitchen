@@ -5,7 +5,6 @@ import "swiper/css/navigation";
 import SwiperCore from "swiper";
 import "./MenuSection.css";
 import logo from "../../../Assets/logo/Soon Kitchen Logo White.png";
-import useGetData from "../../../hook/api/useGetData.js";
 import ReactStars from "react-rating-stars-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as faSolidStar } from "@fortawesome/free-solid-svg-icons";
@@ -13,16 +12,27 @@ import { faStar as faRegularStar } from "@fortawesome/free-regular-svg-icons";
 import CatImg from "../../../Assets/images/diet_561611.png";
 import CatImg2 from "../../../Assets/images/hot-pot_3183463.png";
 import { Navigation } from "swiper/modules";
+import { useGetBrandsQuery } from "../../../RTK/API/BrandsApi.js";
 
 SwiperCore.use([Navigation]);
 
 function Menusection() {
-  const { data: BrandsData } = useGetData();
+  const { data: BrandsData } = useGetBrandsQuery();
   const [Brands, setBrands] = useState([]);
   const [SelectedBrand, setSelectedBrand] = useState({});
   const [Recipes, setRecipes] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [animationClass, setAnimationClass] = useState(""); // New state for animation class
+
+  // Function to initialize brands and recipes
+  useEffect(() => {
+    if (BrandsData?.data) {
+      setBrands(BrandsData?.data);
+      const firstBrand = BrandsData?.data[0];
+      setSelectedBrand(firstBrand);
+      getFirstRecipes(firstBrand);
+    }
+  }, [BrandsData]);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -34,15 +44,24 @@ function Menusection() {
   const handleLogoDesc = (id) => {
     const selectedBrand = Brands.find((item) => item._id === id);
     setSelectedBrand(selectedBrand);
+    console.log(SelectedBrand);
     setAnimationClass("fade-up");
     getFirstRecipes(selectedBrand);
   };
 
   // Function to fetch recipes based on category name
   const GetCategoryRecipes = (Cat_name) => {
+    console.log("SelectedBrand:", SelectedBrand);
+    console.log("Category Name:", Cat_name);
+
     const recipes = SelectedBrand?.recipe?.filter(
-      (recipe) => recipe.labelsName === Cat_name
+      (recipe) =>
+        recipe?.labelsName.trim().toLowerCase() ===
+        Cat_name.trim().toLowerCase()
     );
+
+    console.log("Filtered Recipes:", recipes);
+
     setAnimationClass("fade-up");
     setRecipes(recipes);
   };
@@ -64,16 +83,6 @@ function Menusection() {
       }
     }
   };
-
-  // Function to initialize brands and recipes
-  useEffect(() => {
-    if (BrandsData?.data) {
-      setBrands(BrandsData?.data);
-      const firstBrand = BrandsData?.data[0];
-      setSelectedBrand(firstBrand);
-      getFirstRecipes(firstBrand);
-    }
-  }, [BrandsData]);
 
   useEffect(() => {
     // Remove the animation class after the animation ends
@@ -126,7 +135,7 @@ function Menusection() {
             {SelectedBrand?.labels?.map((item, index) => (
               <SwiperSlide
                 key={index}
-                onClick={() => GetCategoryRecipes(item.name)}
+                onClick={() => GetCategoryRecipes(item?.name)}
               >
                 <div className={`cat_Card`}>
                   <span>
@@ -160,7 +169,7 @@ function Menusection() {
                   count={5}
                   size={16}
                   isHalf={true}
-                  value={item?.rate}
+                  value={item?.rate || "5"}
                   emptyIcon={<FontAwesomeIcon icon={faRegularStar} />}
                   fullIcon={<FontAwesomeIcon icon={faSolidStar} />}
                   color="#d3d3d3"

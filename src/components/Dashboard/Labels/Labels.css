@@ -1,0 +1,70 @@
+.Labels {
+  height: 100px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  justify-content: space-between;
+  padding: 2%;
+  align-items: center;
+  display: flex;
+}
+.LabelForm {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 70%;
+  padding: 3%;
+  background-color: #fff;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.Labels .LabelForm input {
+  display: block;
+  margin: 10px 0;
+  width: 80%;
+  padding: 10px;
+}
+.Labels ul {
+  list-style: none;
+  display: flex;
+}
+.Labels .label_select {
+  align-items: center;
+  display: flex;
+}
+.Labels > ul > li {
+  text-align: center;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 25px;
+  color: #ff0000;
+  font-weight: 600;
+  border: 2px solid #ff7c7c;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-size: 16px;
+  background-color: #ffffff;
+}
+.Labels ul li img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.Labels ul li span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.multiSelectContainer input {
+  background: transparent;
+  border: none;
+  margin-top: 3px;
+  font-size: 10px;
+  display: inline-block;
+}
+.Labels button {
+  width: 60px;
+  height: 38px;
+  margin: 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ff7c7c;
+  border-radius: 25px;
+}
