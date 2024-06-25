@@ -1,10 +1,6 @@
 import React from "react";
 import Mheader from "./../components/HomePage/Header/Mheader";
 import Footer from "./../components/ulity/Footer";
-import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
 
 const FranchisePage = () => {
   return (
@@ -12,7 +8,6 @@ const FranchisePage = () => {
       <Mheader />
       <div className="franchise-header">
         <div className="overlay"></div>
-
         <div className="logo brands-title">
           <h1
             className="text-center"
@@ -27,40 +22,50 @@ const FranchisePage = () => {
           </h1>
         </div>
       </div>
-      <Form className="container bg-white mt-5 franchise-container">
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridName">
-            <Form.Label>Ad</Form.Label>
-            <Form.Control type="text" placeholder="Ad" />
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridLastName">
-            <Form.Label>Soyad</Form.Label>
-            <Form.Control type="text" placeholder="Soyad" />
-          </Form.Group>
-        </Row>
-
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>E-posta</Form.Label>
-            <Form.Control type="email" placeholder="E-posta" />
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="formGridPhone">
-            <Form.Label>Telefon</Form.Label>
-            <Form.Control type="phone" placeholder="+90 *** *** ** **" />
-          </Form.Group>
-        </Row>
-
-        <Form.Group className="mb-3" controlId="formGridMessage">
-          <Form.Label>Mesaj</Form.Label>
-          <textarea rows={4} placeholder="Merhaba, size yazmamın sebebi ..." />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
+      <form className="container bg-white mt-5 franchise-container">
+        <div className="row mb-3">
+          <div className="col-lg-6 col-12 mb-3">
+            <label htmlFor="name" className="form-label">
+              Ad
+            </label>
+            <input type="text" id="name" className="form-control" />
+          </div>
+          <div className="col-lg-6 col-12 mb-3">
+            <label htmlFor="lastName" className="form-label">
+              Soyad
+            </label>
+            <input type="text" id="lastName" className="form-control" />
+          </div>
+        </div>
+        <div className="row mb-3">
+          <div className="col-lg-6 col-12 mb-3">
+            <label htmlFor="email" className="form-label">
+              E-posta
+            </label>
+            <input type="email" id="email" className="form-control" />
+          </div>
+          <div className="col-lg-6 col-12 mb-3">
+            <label htmlFor="phone" className="form-label">
+              Telefon
+            </label>
+            <input type="number" id="phone" className="form-control" />
+          </div>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="message" className="form-label">
+            Mesaj
+          </label>
+          <textarea
+            rows={4}
+            className="form-control"
+            id="message"
+            placeholder="Merhaba, size yazmamın sebebi ..."
+          />
+        </div>
+        <button className="btn btn-primary" type="submit">
           Gönder
-        </Button>
-      </Form>
+        </button>
+      </form>
       <Footer />
     </div>
   );
