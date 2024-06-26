@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./BrandCard.css";
 import { useNavigate } from "react-router-dom";
-import { ArchiveFill } from "react-bootstrap-icons";
+import { ArchiveFill, DashCircle } from "react-bootstrap-icons";
 import { Button, Modal } from "react-bootstrap";
 import defaultLogo from "../../../Assets/logo/logoyuvarlak.png";
 import { useDeleteBrandMutation } from "../../../RTK/API/BrandsApi";
@@ -54,7 +54,7 @@ const BrandCard = ({ Brand, onEdit }) => {
           setShowModal(true);
         }}
       >
-        <ArchiveFill color="#ff4d4d" size={16} />
+        <DashCircle size={16} color="#ff0000" />
       </span>
 
       {/* <!-- Modal --> */}

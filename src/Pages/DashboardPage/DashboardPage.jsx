@@ -11,12 +11,12 @@ const DashboardPage = () => {
   const { data: Recipes } = useGetRecipesQuery();
   const { data: labels } = useGetLabelsQuery();
   return (
-    <div class="d-flex justify-content-between ">
-      <div className=" col-2 SideNav_container">
+    <div class="">
+      <div className=" SideNav_container">
         <Sidenav />
       </div>
-      <div className="col-10 Main_content">
-        <div className="container">
+      <div className="Main_content">
+        <div className="D_container">
           <AdminNavBar />
           <div className="Statics d-flex justify-content-between ">
             <StaticsCard name={"Brands"} number={brands?.data?.length} />

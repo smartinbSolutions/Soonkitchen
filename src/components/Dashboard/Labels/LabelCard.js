@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useDeleteLabelMutation } from "../../../RTK/API/LabelsApi";
 import defaultLogo from "../../../Assets/logo/logoyuvarlak.png";
-import { ArchiveFill } from "react-bootstrap-icons";
+import { ArchiveFill, DashCircle } from "react-bootstrap-icons";
 const LabelCard = ({ Label, onEdit }) => {
   const [showModal, setShowModal] = useState(false);
   const [deletelabel, { isLoading, isError }] = useDeleteLabelMutation();
@@ -20,7 +20,7 @@ const LabelCard = ({ Label, onEdit }) => {
     return logo && logo !== "https://nooncar.com:8001/brandSoon/";
   };
   return (
-    <div className="label_card">
+    <div className="label_card" style={{ height: "184px" }}>
       <div className="post-img">
         <img
           src={isValidLogo(Label?.icon) ? Label?.icon : defaultLogo}
@@ -28,7 +28,7 @@ const LabelCard = ({ Label, onEdit }) => {
           className="img-fluid"
         />
       </div>
-      <h2 className="title">{Label?.name}</h2>
+      <h2 className="title">{Label?.name?.substring(0, 20)}</h2>
 
       <button className="btn btn-primary" onClick={() => onEdit(Label)}>
         update
@@ -39,7 +39,7 @@ const LabelCard = ({ Label, onEdit }) => {
           setShowModal(true);
         }}
       >
-        <ArchiveFill color="#ff4d4d" size={16} />
+        <DashCircle size={16} color="#ff0000" />
       </span>
 
       {/* <!-- Modal --> */}

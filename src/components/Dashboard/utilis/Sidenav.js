@@ -20,20 +20,20 @@ const Sidenav = () => {
         </CDBSidebarHeader>
         <CDBSidebarContent>
           <CDBSidebarMenu>
-            <CDBSidebarMenuItem icon="th-large">
+            <CDBSidebarMenuItem icon="home">
               {" "}
               <Link to="/Dashboard">Dashboard</Link>
             </CDBSidebarMenuItem>
-            <CDBSidebarMenuItem icon="sticky-note">
+            <CDBSidebarMenuItem icon="tags">
               <Link to="/Dashboard/Brands">Brands</Link>
             </CDBSidebarMenuItem>
-            <CDBSidebarMenuItem icon="sticky-note">
+            <CDBSidebarMenuItem icon="bookmark">
               <Link to="/Dashboard/Labels">Labels</Link>
             </CDBSidebarMenuItem>
-            <CDBSidebarMenuItem icon="sticky-note">
+            <CDBSidebarMenuItem icon="globe">
               <Link to="/">webSite</Link>
             </CDBSidebarMenuItem>
-            <CDBSidebarMenuItem icon="sticky-note">
+            <CDBSidebarMenuItem icon="utensils">
               <Link to="/menu">Menu</Link>
             </CDBSidebarMenuItem>
           </CDBSidebarMenu>
@@ -41,7 +41,7 @@ const Sidenav = () => {
 
         <CDBSidebarFooter style={{ textAlign: "center" }}>
           <div className="sidebar-btn-wrapper" style={{ padding: "20px 5px" }}>
-            Sidebar Footer
+            Smartinb CO
           </div>
         </CDBSidebarFooter>
       </CDBSidebar>

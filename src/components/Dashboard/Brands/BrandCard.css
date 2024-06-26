@@ -4,6 +4,7 @@
   top: 0;
   bottom: 0;
   right: 0;
+  overflow-y: auto;
   left: 70%;
   padding: 3%;
   background-color: #ffffff;
@@ -22,6 +23,12 @@
   border-radius: 10px;
   border: 2px solid #dadada !important;
   font-size: 15px !important;
+}
+#IngInput {
+  width: 25% !important;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 12px !important;
 }
 .Brands_container {
   margin-top: 40px;
@@ -46,6 +53,9 @@
   width: 100%;
   object-fit: contain;
   border-radius: 10px;
+}
+.label_card p {
+  height: 43px !important;
 }
 
 .label_card .title {

@@ -75,7 +75,7 @@ const SubmitLabelForm = ({ label, onCancel }) => {
 
   return (
     <form onSubmit={handleSubmit} className="AddBrandForm">
-      <h2>{label ? "Update Label" : "Add Label"}</h2>
+      <h4>{label ? "Update Label" : "Add Label"}</h4>
       <input
         type="text"
         value={LabelName}

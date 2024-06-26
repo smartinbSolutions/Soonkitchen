@@ -80,7 +80,7 @@ const AddBrandForm = ({ brand, onCancel }) => {
   // }, [data]);
   return (
     <form onSubmit={handleSubmit} className="AddBrandForm">
-      <h2>{brand ? "updata Brand" : "Add Brand"}</h2>
+      <h4>{brand ? "updata Brand" : "Add Brand"}</h4>
       <input
         type="text"
         value={brandName}

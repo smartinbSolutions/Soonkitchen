@@ -19,7 +19,8 @@
 .recipe_card .Recipe_img img {
   height: 100px;
   width: 100px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .recipe_card .Recipe_info h6 {
@@ -44,6 +45,7 @@
   top: 5%;
   right: 10%;
 }
+
 @media (min-width: 1200px) and (max-width: 1800px) {
   .recipe_card {
     width: 20%;

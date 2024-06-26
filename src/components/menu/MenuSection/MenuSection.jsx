@@ -13,22 +13,24 @@ import CatImg from "../../../Assets/images/diet_561611.png";
 import CatImg2 from "../../../Assets/images/hot-pot_3183463.png";
 import { Navigation } from "swiper/modules";
 import { useGetBrandsQuery } from "../../../RTK/API/BrandsApi.js";
+import RecipeCard from "../../Dashboard/Recipes/RecipeCard.js";
 
 SwiperCore.use([Navigation]);
 
 function Menusection() {
   const { data: BrandsData } = useGetBrandsQuery();
-  const [Brands, setBrands] = useState([]);
-  const [SelectedBrand, setSelectedBrand] = useState({});
-  const [Recipes, setRecipes] = useState([]);
+  const [brands, setBrands] = useState([]);
+  const [selectedBrand, setSelectedBrand] = useState({});
+  const [selectedRecipe, setSelectedRecipe] = useState({});
+  const [showRecipeCard, setShowRecipeCard] = useState(false);
+  const [recipes, setRecipes] = useState([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [animationClass, setAnimationClass] = useState(""); // New state for animation class
+  const [animationClass, setAnimationClass] = useState("");
 
-  // Function to initialize brands and recipes
   useEffect(() => {
     if (BrandsData?.data) {
-      setBrands(BrandsData?.data);
-      const firstBrand = BrandsData?.data[0];
+      setBrands(BrandsData.data);
+      const firstBrand = BrandsData.data[0];
       setSelectedBrand(firstBrand);
       getFirstRecipes(firstBrand);
     }
@@ -40,55 +42,45 @@ function Menusection() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Function to handle brand selection and filter recipes
+  const handleCancel = () => {
+    setShowRecipeCard(false);
+    console.log(showRecipeCard);
+  };
+
+  useEffect(() => {
+    console.log("ShowRecipeCard:", showRecipeCard);
+  }, [showRecipeCard]);
+
   const handleLogoDesc = (id) => {
-    const selectedBrand = Brands.find((item) => item._id === id);
+    const selectedBrand = brands.find((item) => item._id === id);
     setSelectedBrand(selectedBrand);
-    console.log(SelectedBrand);
     setAnimationClass("fade-up");
     getFirstRecipes(selectedBrand);
   };
 
-  // Function to fetch recipes based on category name
-  const GetCategoryRecipes = (Cat_name) => {
-    console.log("SelectedBrand:", SelectedBrand);
-    console.log("Category Name:", Cat_name);
-
-    const recipes = SelectedBrand?.recipe?.filter(
+  const getCategoryRecipes = (catName) => {
+    const filteredRecipes = selectedBrand?.recipe?.filter(
       (recipe) =>
-        recipe?.labelsName.trim().toLowerCase() ===
-        Cat_name.trim().toLowerCase()
+        recipe?.labelsName.trim().toLowerCase() === catName.trim().toLowerCase()
     );
-
-    console.log("Filtered Recipes:", recipes);
-
     setAnimationClass("fade-up");
-    setRecipes(recipes);
+    setRecipes(filteredRecipes);
   };
 
-  // Function to fetch all recipes for the selected brand
-  const GetAllCategoryRecipes = () => {
+  const getAllCategoryRecipes = () => {
     setAnimationClass("fade-up");
-    setRecipes(SelectedBrand?.recipe);
+    setRecipes(selectedBrand?.recipe);
   };
 
-  // Function to fetch the first category recipes when the page loads
   const getFirstRecipes = (brand) => {
-    if (brand?.recipe) {
-      const recipes = brand?.recipe;
-      if (recipes && recipes.length > 0) {
-        setRecipes(recipes);
-      } else {
-        setRecipes([]);
-      }
-    }
+    const initialRecipes = brand?.recipe || [];
+    setRecipes(initialRecipes);
   };
 
   useEffect(() => {
-    // Remove the animation class after the animation ends
-    const timeout = setTimeout(() => setAnimationClass(""), 1000); // 1000ms matches the animation duration
+    const timeout = setTimeout(() => setAnimationClass(""), 1000);
     return () => clearTimeout(timeout);
-  }, [Recipes]); // Run this effect whenever Recipes change
+  }, [recipes]);
 
   const slidesPerView = windowWidth < 640 ? 4 : 5;
 
@@ -108,7 +100,7 @@ function Menusection() {
         </div>
         <div className="BrandsSwiper">
           <Swiper slidesPerView={slidesPerView} navigation>
-            {Brands.map((item, index) => (
+            {brands.map((item, index) => (
               <SwiperSlide key={index} onClick={() => handleLogoDesc(item._id)}>
                 <div className="Brand_Card">
                   <img src={item.logo} alt={`Brand ${item._id}`} />
@@ -119,32 +111,32 @@ function Menusection() {
         </div>
       </div>
       <div className="container">
-        <div className={`Brand_Desc`}>
-          <p>{SelectedBrand?.desc}</p>
+        <div className="Brand_Desc">
+          <p>{selectedBrand?.desc}</p>
         </div>
         <div className="Brand_Cat">
           <Swiper slidesPerView={slidesPerView}>
-            <SwiperSlide onClick={GetAllCategoryRecipes}>
-              <div className={`cat_Card `}>
+            <SwiperSlide onClick={getAllCategoryRecipes}>
+              <div className="cat_Card">
                 <span>
                   <img src={CatImg} alt="Cat_Img" />
                 </span>
                 <p>All</p>
               </div>
             </SwiperSlide>
-            {SelectedBrand?.labels?.map((item, index) => (
+            {selectedBrand?.labels?.map((item, index) => (
               <SwiperSlide
                 key={index}
-                onClick={() => GetCategoryRecipes(item?.name)}
+                onClick={() => getCategoryRecipes(item?.name)}
               >
-                <div className={`cat_Card`}>
+                <div className="cat_Card">
                   <span>
                     <img
                       src={item.icon || CatImg2}
                       alt={item.name || "Category Image"}
                       onError={(e) => {
-                        e.target.onerror = null; // Prevent looping
-                        e.target.src = CatImg2; // Fallback image
+                        e.target.onerror = null;
+                        e.target.src = CatImg2;
                         console.error(`Failed to load image: ${item.image}`);
                       }}
                     />
@@ -156,27 +148,32 @@ function Menusection() {
           </Swiper>
         </div>
         <div className={`Brand_Menu ${animationClass}`}>
-          {Recipes.map((item, index) => (
-            <div key={index} className={`Recipe_Card ${animationClass}`}>
+          {recipes.map((item, index) => (
+            <div
+              key={index}
+              className={`Recipe_Card ${animationClass}`}
+              onClick={() => {
+                setSelectedRecipe(item);
+                setShowRecipeCard(true);
+              }}
+            >
               <div className="Recipe_img">
                 <img src={item?.images[0]} alt="" />
               </div>
               <div className="Recipe_info">
                 <h6>{item?.name}</h6>
                 <p>{item?.labelsName}</p>
-
                 <ReactStars
                   count={5}
                   size={16}
                   isHalf={true}
-                  value={item?.rate || "5"}
+                  value={item?.rate || 5}
                   emptyIcon={<FontAwesomeIcon icon={faRegularStar} />}
                   fullIcon={<FontAwesomeIcon icon={faSolidStar} />}
                   color="#d3d3d3"
                   activeColor="#ffd700"
                 />
               </div>
-
               <div className="price">
                 <span>
                   {item?.price} <span id="currency">₺</span>
@@ -184,6 +181,13 @@ function Menusection() {
               </div>
             </div>
           ))}
+
+          <RecipeCard
+            recipe={selectedRecipe}
+            brand={selectedBrand}
+            onCancel={handleCancel}
+            show={showRecipeCard}
+          />
         </div>
       </div>
     </div>

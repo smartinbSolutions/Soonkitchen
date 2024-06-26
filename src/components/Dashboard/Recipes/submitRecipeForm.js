@@ -3,40 +3,52 @@ import {
   useAddRecipeMutation,
   useUpdateRecipeMutation,
 } from "../../../RTK/API/RecipesApi";
-import { XCircle } from "react-bootstrap-icons";
+import { DashCircle, XCircle } from "react-bootstrap-icons";
 import { useGetBrandByIdQuery } from "../../../RTK/API/BrandsApi";
 import Dropzone from "react-dropzone-uploader";
 
-const SubmitRecipeForm = ({
-  recipe,
-  ingredients,
-  onCancel,
-  BrandID,
-  onTrigger,
-}) => {
+const SubmitRecipeForm = ({ recipe, onCancel, BrandID, onTrigger }) => {
   const [RecipeName, setRecipeName] = useState("");
   const [RecipeDesc, setRecipeDesc] = useState("");
   const [RecipePrice, setRecipePrice] = useState("");
   const [selectedLabel, setSelectedLabel] = useState(recipe?.labelsName || "");
   const [RecipeImages, setRecipeImages] = useState([]);
-  const [Ingredients, setIngredients] = useState("");
+  const [Ingredients, setIngredients] = useState([
+    { name: "", calories: "", weight: "" },
+  ]);
+
   // RTK Queries
   const { data: BrandData } = useGetBrandByIdQuery(BrandID);
   const [AddRecipe, { isLoading: isAdding, error: NewRecipeError }] =
     useAddRecipeMutation();
-  const [updataRecipe, { isLoading: isUpdating, error: updatedRecipeError }] =
+  const [updateRecipe, { isLoading: isUpdating, error: updatedRecipeError }] =
     useUpdateRecipeMutation();
 
   useEffect(() => {
-    console.log(recipe);
     if (recipe) {
-      console.log(recipe);
       setRecipeName(recipe?.name);
       setRecipeDesc(recipe?.desc);
       setRecipePrice(recipe?.price);
-      setIngredients(recipe?.ingredients);
+      setIngredients(
+        recipe?.ingredients || [{ name: "", calories: "", weight: "" }]
+      );
     }
   }, [recipe]);
+
+  const handleIngredientChange = (index, field, value) => {
+    const updatedIngredients = [...Ingredients];
+    updatedIngredients[index][field] = value;
+    setIngredients(updatedIngredients);
+  };
+
+  const handleAddIngredient = () => {
+    setIngredients([...Ingredients, { name: "", calories: "", weight: "" }]);
+  };
+
+  const handleRemoveIngredient = (index) => {
+    const updatedIngredients = Ingredients.filter((_, i) => i !== index);
+    setIngredients(updatedIngredients);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,45 +56,43 @@ const SubmitRecipeForm = ({
     formData.append("name", RecipeName);
     formData.append("desc", RecipeDesc);
     formData.append("price", RecipePrice);
-    formData.append("ingredients", Ingredients);
     formData.append("labelsName", selectedLabel);
+    // Append each ingredient in the format ingredients[0][name], etc.
+    Ingredients.forEach((ingredient, index) => {
+      formData.append(`ingredients[${index}][name]`, ingredient.name);
+      formData.append(`ingredients[${index}][calories]`, ingredient.calories);
+      formData.append(`ingredients[${index}][weight]`, ingredient.weight);
+    });
     RecipeImages.forEach((file) => {
       formData.append("images", file);
     });
-    // Debugging logs to check FormData contents
-    for (let [key, value] of formData.entries()) {
-      console.log(key, value);
-    }
 
     try {
       if (recipe) {
-        console.log(recipe);
-        await updataRecipe({ id: recipe?._id, formData });
+        await updateRecipe({ id: recipe?._id, formData });
       } else {
-        console.log(recipe);
         await AddRecipe({ id: BrandID, formData });
       }
-      // Handle success, e.g., reset form
       setRecipeName("");
       setRecipeDesc("");
-      setIngredients("");
-      onCancel(); // Close the form after successful submission
+      setRecipePrice("");
+      setIngredients([{ name: "", calories: "", weight: "" }]);
+      onCancel();
       onTrigger();
     } catch (error) {
-      // Handle error
       console.error("Failed to add Recipe:", error.message);
     }
   };
+
   const handleChangeStatus = ({ meta, file }, status) => {
     if (status === "done") {
       setRecipeImages((prev) => [...prev, file]);
-      const fileURL = URL.createObjectURL(file);
-      console.log("File URL:", `${fileURL}.png`);
     }
   };
+
   return (
     <form onSubmit={handleSubmit} className="AddBrandForm">
-      <h2>{recipe ? "updata Recipe" : "Add Recipe"}</h2>
+      <h4>{recipe ? "Update Recipe" : "Add Recipe"}</h4>
       <input
         type="text"
         value={RecipeName}
@@ -94,7 +104,7 @@ const SubmitRecipeForm = ({
         type="text"
         value={RecipeDesc}
         onChange={(e) => setRecipeDesc(e.target.value)}
-        placeholder="Enter Recipe Desc"
+        placeholder="Enter Recipe Description"
       />
       <input
         type="text"
@@ -108,20 +118,66 @@ const SubmitRecipeForm = ({
         value={selectedLabel}
         onChange={(e) => setSelectedLabel(e.target.value)}
       >
-        <option value="">Choose recipe Label</option>
+        <option value="">Choose Recipe Label</option>
         {BrandData?.data?.labels?.map((item) => (
           <option key={item.id} value={item.id}>
             {item.name}
           </option>
         ))}
       </select>
+      <h6>Ingredients</h6>
+      {Ingredients?.map((ingredient, index) => (
+        <div key={index} className="ingredient-inputs">
+          <input
+            id="IngInput"
+            type="text"
+            value={ingredient?.name}
+            onChange={(e) =>
+              handleIngredientChange(index, "name", e.target.value)
+            }
+            placeholder="Ingredient Name"
+            required
+          />
+          <input
+            id="IngInput"
+            type="text"
+            value={ingredient?.calories}
+            onChange={(e) =>
+              handleIngredientChange(index, "calories", e.target.value)
+            }
+            placeholder="Calories"
+            required
+          />
+          <input
+            id="IngInput"
+            type="text"
+            value={ingredient?.weight}
+            onChange={(e) =>
+              handleIngredientChange(index, "weight", e.target.value)
+            }
+            placeholder="Weight"
+            required
+          />
+          {Ingredients.length > 1 && (
+            <button
+              type="button"
+              className="btn btn-danger"
+              onClick={() => handleRemoveIngredient(index)}
+            >
+              <DashCircle />
+            </button>
+          )}
+        </div>
+      ))}
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={handleAddIngredient}
+        style={{ fontSize: "12px" }}
+      >
+        Add Ingredient
+      </button>
 
-      <textarea
-        type="text"
-        value={Ingredients}
-        onChange={(e) => setIngredients(e.target.value)}
-        placeholder="Enter Recipe ingredients"
-      />
       <Dropzone
         onChangeStatus={handleChangeStatus}
         accept="image/*"
@@ -135,7 +191,7 @@ const SubmitRecipeForm = ({
         className="btn btn-primary"
         disabled={isAdding || isUpdating}
       >
-        {recipe ? "updata Recipe" : "Add Recipe"}
+        {recipe ? "Update Recipe" : "Add Recipe"}
       </button>
       <XCircle color="#0355ec" size={30} className="exit" onClick={onCancel} />
       {(isAdding || isUpdating) && <p>Submitting Recipe...</p>}

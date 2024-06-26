@@ -21,16 +21,16 @@ const Labels = () => {
   };
 
   return (
-    <div class="d-flex justify-content-between ">
-      <div className=" col-2 SideNav_container">
+    <div>
+      <div className="SideNav_container">
         <Sidenav />
       </div>
-      <div className="col-10 Main_content">
-        <div className="container">
+      <div className="Main_content">
+        <div className="D_container">
           <AdminNavBar />
           <section>
             <div className="mt-3 d-flex justify-content-between">
-              <h2>Soon Kitchen Labels</h2>
+              <h4>Soon Kitchen Labels</h4>
               <button className="btn btn-primary" onClick={handleAdd}>
                 Add label
                 <Plus color="#fff" size={24} />
