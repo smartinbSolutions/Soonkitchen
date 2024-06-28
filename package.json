@@ -22,6 +22,7 @@
     "i18next": "^23.10.1",
     "multiselect-react-dropdown": "^2.0.25",
     "npm": "^10.8.0",
+    "openssl": "^2.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-bootstrap-icons": "^1.11.4",
