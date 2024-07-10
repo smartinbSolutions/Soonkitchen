@@ -10,6 +10,7 @@ import "./hook/locale/i18n";
 import "../src/components/menu/Header/Header.css";
 import { Provider } from "react-redux";
 import { store } from "./RTK/store";
+import swDev from "./swDev";
 
 const queryClient = new QueryClient({});
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -20,3 +21,4 @@ root.render(
     </QueryClientProvider>
   </Provider>
 );
+swDev();
