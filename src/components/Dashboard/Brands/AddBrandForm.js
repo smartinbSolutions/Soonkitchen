@@ -20,20 +20,28 @@ const AddBrandForm = ({ brand, onCancel }) => {
   ] = useUpdateBrandMutation();
 
   const urlToFile = async (url, filename, mimeType) => {
-    const res = await fetch(url);
-    const buffer = await res.arrayBuffer();
-    return new File([buffer], filename, { type: mimeType });
+    try {
+      const res = await fetch(url);
+      const buffer = await res.arrayBuffer();
+      return new File([buffer], filename, { type: mimeType });
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   useEffect(() => {
     if (brand) {
-      setBrandName(brand?.name);
-      setBrandDesc(brand?.desc);
-      setLogoPreview(brand?.logo);
-      if (brand.logo) {
-        urlToFile(brand?.logo, "logo.png", "image/png").then((file) => {
-          setBrandLogo(file);
-        });
+      try {
+        setBrandName(brand?.name);
+        setBrandDesc(brand?.desc);
+        setLogoPreview(brand?.logo);
+        if (brand.logo) {
+          urlToFile(brand?.logo, "logo.png", "image/png").then((file) => {
+            setBrandLogo(file);
+          });
+        }
+      } catch (e) {
+        console.log(e);
       }
     }
   }, [brand]);

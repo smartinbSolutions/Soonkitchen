@@ -25,7 +25,7 @@ const BrandCard = ({ Brand, onEdit }) => {
   // Check if Brand.logo is a valid image URL
   const isValidLogo = (logo) => {
     // Replace this with your logic to check if 'logo' is a valid URL for an image
-    return logo && logo !== "https://nooncar.com:8001/brandSoon/";
+    return logo && logo !== "http://smartinb.ai/brandSoon/";
   };
   return (
     <div className="label_card">
